@@ -23,7 +23,7 @@ a.button {
 }
 /*----------------HEADER----------------*/
 header {
-	height: 329px;
+	height: 317px;
 	background:url(../images/droga-tlo.png) repeat-x;	
 }
 
@@ -61,7 +61,7 @@ footer {
 /*----------------USER PANEL----------------*/
 #login-user-panel {
 	float: right;
-	width: 300px;
+	width: 400px;
 	color: #fff;
 	text-align: right;
 }
@@ -73,7 +73,7 @@ footer {
 /*----------------NAWIGACJA----------------*/
 #head-wrapper nav
 {
-	margin: 10px 0;
+	margin: 10px 0 0;
 	width: 980px;
 	float: right;
 	font-size: 15px;
@@ -108,8 +108,8 @@ footer {
 	color: #fff;
 	text-decoration: none;
 	padding: 20px 12px;
-	
 }
+
 #head-wrapper nav li a:hover
 {
 	border: 0;
@@ -168,10 +168,87 @@ footer {
 {
 	color: #fff;	
 }
+/*----------------SITE WRAPPER----------------*/
+#jestem
+{
+	width: 100%;
+	color: #fff;
+}
+
+#jestem h2 
+{
+	margin: 20px 0 10px;
+	font-size: 30px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-decoration: underline;
+}
+
+#jestem p 
+{
+	font-size:14px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 20px;	
+}
+
+#jestem a
+{
+	color: #fff;	
+	text-decoration: none;
+}
+
+#jestem-naukowcem, #jestem-przedsiebiorca
+{
+	height: 116px;
+	width: 50%;	
+}
+
+#jestem-naukowcem 
+{
+	float: left;
+	background:url(../images/jestem-naukowcem-bg.png) repeat-x;	
+}
+#jestem-przedsiebiorca 
+{
+	float: right;
+	background:url(../images/jestem-przedsiebiorca-bg.png) repeat-x;	
+}
+
+#jestem-naukowcem:hover
+{
+	background:url(../images/jestem-naukowcem-bg-h.png) repeat-x;	
+}
+#jestem-przedsiebiorca:hover
+{
+	background:url(../images/jestem-przedsiebiorca-bg-h.png) repeat-x;	
+}
+
+#jestem-naukowcem-box
+{
+	background: url(../images/naukowiec_ico.png) no-repeat 95% 50%;
+	padding: 0 10px;
+	width: 469px;
+	border-right: 1px solid white;
+	height: 116px;
+	float: right;
+	text-align: left;	
+}
+
+#jestem-przedsiebiorca-box
+{
+	background: url(../images/przedsiebiorca_ico.png) no-repeat 5% 50%;
+	height: 116px;
+	padding: 0 10px;
+	width: 469px;
+	border-left: 1px solid white;
+	float: left;
+	text-align: right;
+}
+
 
 /*----------------SITE WRAPPER----------------*/
 #site-wrapper
 {
+	clear: both;
 	width: 980px;
 	padding: 10px;
 	margin: auto;	
