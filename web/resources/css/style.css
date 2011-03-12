@@ -1,30 +1,70 @@
 /*----------------OGÓLNE----------------*/
-a.button { 
-	display: inline-block; 
-	padding: 7px 9px; 
+a.button {
+	display: inline-block;
+	padding: 7px 9px;
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
-	line-height:1; 
-	color: #fff; 
-	text-shadow: 1px 1px 0 #777; 
-	background: #01c8ec; 
-	white-space: nowrap; 
-	overflow: visible; 
-	cursor: pointer; 
-	text-decoration: none; 
-	border: 1px solid #0194af; 
+	line-height: 1;
+	color: #fff;
+	text-shadow: 1px 1px 0 #777;
+	background: #01c8ec;
+	white-space: nowrap;
+	overflow: visible;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid #0194af;
 	border-style: outset;
-	outline: none; 
-	position: relative; 
+	outline: none;
+	position: relative;
 }
 
-.link-right{
+.link-right {
 	text-align: right;
 }
+
+.link-more {
+	margin: 5px 0;
+	display: inline-block;
+}
+
+.link1 {
+	color: #178DB9;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.link1:hover {
+	color: #000;
+}
+
+.link2 {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.link2:hover {
+	color: #d5d5d5;
+}
+
+.link3 {
+	color: #178DB9;
+}
+
+.link3:hover {
+	color: #000;
+}
+
+.link4 {
+	color: #8d8d8d;
+}
+
+.link4:hover {
+	color: #000;
+}
 /*----------------HEADER----------------*/
-header {
+#main-header {
 	height: 317px;
-	background:url(../images/droga-tlo.png) repeat-x;	
+	background: url(../images/droga-tlo.png) repeat-x;
 }
 
 footer {
@@ -38,23 +78,21 @@ footer {
 	padding-top: 20px;
 }
 /*----------------LOGO----------------*/
-#main-logo
-{
+#main-logo {
 	position: absolute;
 	z-index: 10;
 }
-#head-wrapper h1
-{
+
+#head-wrapper h1 {
 	text-indent: -9999px;
 	float: left;
 }
 
-#head-wrapper h1 a
-{
+#head-wrapper h1 a {
 	background: url(../images/logo.png);
 	display: block;
 	text-indent: -9999px;
-	height:67px;
+	height: 67px;
 	width: 358px;
 	z-index: 1;
 }
@@ -66,13 +104,11 @@ footer {
 	text-align: right;
 }
 
-#login-user-panel a{
-	color: #fff;
+#login-user-panel a {
 	margin: 0 0 10px 5px;
 }
 /*----------------NAWIGACJA----------------*/
-#head-wrapper nav
-{
+#head-wrapper nav {
 	margin: 10px 0 0;
 	width: 980px;
 	float: right;
@@ -81,26 +117,26 @@ footer {
 	border-top: 1px solid #333;
 	border-bottom: 1px solid #333;
 }
-#head-wrapper nav ul
-{
+
+#head-wrapper nav ul {
 	margin: 0;
 	float: left;
 }
-#head-wrapper nav li
-{
+
+#head-wrapper nav li {
 	height: 36px;
 	margin: 10px 0;
 	border-right: 1px solid #333;
 	float: left;
 	position: relative;
 }
-#head-wrapper nav li a.first
-{
+
+#head-wrapper nav li a.first {
 	margin-left: 0;
-	border: 0;	
+	border: 0;
 }
-#head-wrapper nav li a
-{
+
+#head-wrapper nav li a {
 	display: block;
 	position: relative;
 	top: -12px;
@@ -110,21 +146,18 @@ footer {
 	padding: 20px 12px;
 }
 
-#head-wrapper nav li a:hover
-{
+#head-wrapper nav li a:hover {
 	border: 0;
 	background: url(../images/menu-bg.png) center;
 }
 /*----------------NAV SEARCH FORM----------------*/
-#search-form 
-{
+#search-form {
 	padding: 12px 0 0;
 	width: 300px;
 	float: right;
 }
 
-#search-form input
-{
+#search-form input {
 	background: url(../images/lupa_ico.gif) #fff no-repeat 97% 50%;
 	width: 205px;
 	height: 28px;
@@ -134,107 +167,90 @@ footer {
 	border: 0;
 }
 
-#search-form p
-{
+#search-form p {
 	width: 70px;
 	float: right;
 }
 /*----------------WSPÓLNA DROGA----------------*/
-#wspolna-droga 
-{
+#wspolna-droga {
 	background: url(../images/droga.png) no-repeat;
 	width: 630px;
 	height: 162px;
-	clear: both;	
+	clear: both;
 	color: #fff;
 	padding-top: 10px;
 	padding-right: 350px;
 }
 
-#wspolna-droga h2 
-{
+#wspolna-droga h2 {
 	font-size: 24px;
-	font-family: Georgia, "Times New Roman", Times, serif;	
+	font-family: Georgia, "Times New Roman", Times, serif;
 	margin-bottom: 10px;
 }
 
-#wspolna-droga p
-{
+#wspolna-droga p {
 	font-size: 16px;
 	line-height: 24px;
 }
 
-#wspolna-droga a
-{
-	color: #fff;	
-}
-/*----------------SITE WRAPPER----------------*/
-#jestem
-{
+/*----------------JESTEM----------------*/
+#jestem {
 	width: 100%;
 	color: #fff;
 }
 
-#jestem h2 
-{
+#jestem h2 {
 	margin: 20px 0 10px;
 	font-size: 30px;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	text-decoration: underline;
 }
 
-#jestem p 
-{
-	font-size:14px;
+#jestem p {
+	font-size: 14px;
 	font-family: Arial, Helvetica, sans-serif;
-	line-height: 20px;	
+	line-height: 20px;
 }
 
-#jestem a
-{
-	color: #fff;	
+#jestem a {
+	color: #fff;
 	text-decoration: none;
 }
 
-#jestem-naukowcem, #jestem-przedsiebiorca
-{
+#jestem-naukowcem,#jestem-przedsiebiorca {
 	height: 116px;
-	width: 50%;	
+	width: 50%;
 }
 
-#jestem-naukowcem 
-{
+#jestem-naukowcem {
 	float: left;
-	background:url(../images/jestem-naukowcem-bg.png) repeat-x;	
+	background: url(../images/jestem-naukowcem-bg.png) repeat-x;
 }
-#jestem-przedsiebiorca 
-{
+
+#jestem-przedsiebiorca {
 	float: right;
-	background:url(../images/jestem-przedsiebiorca-bg.png) repeat-x;	
+	background: url(../images/jestem-przedsiebiorca-bg.png) repeat-x;
 }
 
-#jestem-naukowcem:hover
-{
-	background:url(../images/jestem-naukowcem-bg-h.png) repeat-x;	
-}
-#jestem-przedsiebiorca:hover
-{
-	background:url(../images/jestem-przedsiebiorca-bg-h.png) repeat-x;	
+#jestem-naukowcem:hover {
+	background: url(../images/jestem-naukowcem-bg-h.png) repeat-x;
 }
 
-#jestem-naukowcem-box
-{
+#jestem-przedsiebiorca:hover {
+	background: url(../images/jestem-przedsiebiorca-bg-h.png) repeat-x;
+}
+
+#jestem-naukowcem-box {
 	background: url(../images/naukowiec_ico.png) no-repeat 95% 50%;
 	padding: 0 10px;
 	width: 469px;
 	border-right: 1px solid white;
 	height: 116px;
 	float: right;
-	text-align: left;	
+	text-align: left;
 }
 
-#jestem-przedsiebiorca-box
-{
+#jestem-przedsiebiorca-box {
 	background: url(../images/przedsiebiorca_ico.png) no-repeat 5% 50%;
 	height: 116px;
 	padding: 0 10px;
@@ -244,49 +260,124 @@ footer {
 	text-align: right;
 }
 
-
 /*----------------SITE WRAPPER----------------*/
-#site-wrapper
-{
+#site-wrapper {
 	clear: both;
 	width: 980px;
 	padding: 10px;
-	margin: auto;	
+	margin: auto;
+	overflow: auto;
 }
 
+/*----------------MAIN CONTENT----------------*/
+#content {
+	float: left;
+	width: 660px;
+	padding: 10px;
+}
 
+#content h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #000;
+	margin: 0 0 5px;
+}
+
+.index-article {
+	border-bottom: 1px dashed #9c9c9c;
+	margin: 5px 0;
+	padding: 5px 0 10px;
+}
+
+.index-article header h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+.index-article header time {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #8d8d8d;
+	display: block;
+	margin: 3px 0 3px;
+}
+
+#content p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+}
+
+/*----------------SIDEBAR----------------*/
+.index-sidebar {
+	width: 280px;
+	padding: 10px;
+	float: right;
+}
+
+.index-sidebar h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #000;
+	margin: 0 0 5px;
+}
+
+.index-sidebar p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+}
+
+.index-sidebar-box {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #9c9c9c;
+}
+
+.last-index-sidebar-box {
+	border: 0;
+}
+
+ul.pdf-list {
+	list-style: none;
+}
+
+ul.pdf-list li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 8px 0 8px 20px;
+	background: url(../images/pdf_ico.png) no-repeat 0 50%;
+	border-bottom: 1px dashed #9c9c9c;
+}
 /*----------------STOPKA----------------*/
-#footer-wrapper
-{
+#footer-wrapper {
 	position: relative;
 	top: -3px;
 	margin: auto;
 	padding: 5px 10px;
-	width: 970px;	
+	width: 970px;
 	background: #ebebeb;
 	border-top: 3px solid #c0c0c0;
-	overflow: auto;	
+	overflow: auto;
 }
 
-footer p, footer a
-{
+footer p,footer a {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #8d8d8d;	
+	color: #8d8d8d;
 }
 
-footer img 
-{
+footer img {
 	
 }
 
-.copyright
-{
+.copyright {
 	padding: 20px 0;
-	float: left;	
+	float: left;
 }
 
-#footer-images 
-{
+#footer-images {
 	float: right;
 }
