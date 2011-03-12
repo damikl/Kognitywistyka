@@ -4,14 +4,15 @@
   Dzięki temu możemy stosować taki sam header w każdej podstronie.
   */
 .glowna #head-wrapper nav .nav-1-link a,
-.oprojekcie #head-wrapper nav .nav-2-link a
+.oprojekcie #head-wrapper nav .nav-2-link a,
+.kontakt #head-wrapper nav .nav-6-link a
 	{
 	border: 0;
 	background: url(../images/menu-bg.png) center;
 }
 
 /*----------------OGÓLNE----------------*/
-a.button {
+.button {
 	display: inline-block;
 	padding: 7px 9px;
 	font-size: 13px;
@@ -278,6 +279,13 @@ footer {
 	overflow: auto;
 }
 
+#site-navigation {
+	margin: 0 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;	
+}
+
 /*----------------MAIN CONTENT----------------*/
 #content {
 	float: left;
@@ -330,7 +338,7 @@ footer {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 20px;
 	color: #000;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 #content2 p {
@@ -395,6 +403,14 @@ ul.pdf-list li {
 	border-bottom: 2px solid #c0c0c0;
 }
 
+.sidebar2 p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+	margin: 10px;
+}
+
 .submenu1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -409,8 +425,8 @@ ul.pdf-list li {
 	border-bottom: 1px solid #636363;
 }
 
-.submenu1 li:hover {
-	background: #01c8ec;
+.submenu1 li:hover, .submenu-checked {
+	background: #01c8ec !important;
 }
 
 .submenu1 a {
@@ -422,6 +438,60 @@ ul.pdf-list li {
 	width: 100%;
 }
 
+/*----------------FORMULARZ KONTAKTOWY----------------*/
+.contact-form {
+	width: 600px;	
+}
+
+.contact-form div {
+	clear: both;
+	margin: 5px 0;
+	overflow: auto;
+}
+
+.contact-form label{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	padding: 8px 0;
+	width: 90px;
+	display: inline-block;
+	float: left;
+}
+
+.contact-form div input{
+	float: left;
+	width: 180px;
+	height: 24px;
+	padding: 0 10px;
+	margin-right: 10px;
+	font-size: 13px;
+	border: 1px solid b3b3b3;	
+}
+
+.contact-button {
+	width: 70px;
+	display: block;
+	float: right;
+	margin-right: 5px;
+}
+
+.contact-form textarea {
+	float: left;
+	width: 490px;
+	height: 200px;
+	padding: 5px;
+	font-size: 13px;
+	border: 1px solid b3b3b3;	
+}
+
+.contact-form div p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ff0000 !important;
+	padding: 3px 0;
+	float: left;
+}
 
 /*----------------STOPKA----------------*/
 #footer-wrapper {

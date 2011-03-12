@@ -10,7 +10,7 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-<body class="oprojekcie">
+<body class="kontakt">
 <header id="main-header">
 	<div id="head-wrapper">
         <h1><a href="#">Kognitywistyka FORESIGHT</a></h1>
@@ -63,19 +63,35 @@
 
 <!-- TREŚĆ WŁAŚCIWA STRONY -->
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; O projekcie</p>
+	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Kontakt</p>
 	<aside class="sidebar2">
     	<ul class="submenu1">
-        	<li class="submenu-checked"><a href="#">Kadra projektu</a></li>
-            <li><a href="#">Raporty</a></li>
-            <li><a href="#">Baza linków</a></li>
+        	<li class="submenu-checked"><a href="#">Kontakt</a></li>
         </ul>
+        <p>Kognitywistyka Foresight</p>
+        <p>ul. Piłsudskiego 1<br />Kraków 30-600</p>
+        <p>tel. 600 123 321<br />fax. 12 421 00 12</p>
+        <p>email: <a href="#" class="link1">biuro@projekt.pl</a></p>
     </aside>
     <div id="content2">
-    	<h3>Główne informacje o projekcie</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolor.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia. </p>
+    	<h3>Napisz do nas</h3>
+        <form class="contact-form">
+        	<div>
+            	<label for="nadawca">Nadawca:</label>
+            	<input type="text" name="nadawca" />
+                <p class="form-warning">Nie wypełniono nadawcy</p>
+            </div>
+            <div>
+            	<label for="email">Twój email:</label>
+            	<input type="text" name="email" />
+                <p class="form-warning">Niepoprawnie wypełnione pole z Twoim mailem</p>
+            </div>
+            <div>
+            	<label for="tresc">Treść:</label>
+                <textarea />
+            </div>
+            <input type="submit" value="Wyślij" class="button contact-button" />
+        </form>
     </div>
 </div>
 <!--  KONIEC TREŚCI WŁASCIWEJ STRONY -->
