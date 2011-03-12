@@ -1,3 +1,15 @@
+/*----------------HACKS----------------*/
+
+/*Sposób na to, by zaznaczaćw menu stronę, która aktualnie jest podświetlona.
+  Dzięki temu możemy stosować taki sam header w każdej podstronie.
+  */
+.glowna #head-wrapper nav .nav-1-link a,
+.oprojekcie #head-wrapper nav .nav-2-link a
+	{
+	border: 0;
+	background: url(../images/menu-bg.png) center;
+}
+
 /*----------------OGÓLNE----------------*/
 a.button {
 	display: inline-block;
@@ -29,37 +41,34 @@ a.button {
 
 .link1 {
 	color: #178DB9;
-	text-decoration: none;
+	text-decoration: none;	
 	font-weight: bold;
 }
 
 .link1:hover {
-	color: #000;
+	color: #000;	
 }
-
 .link2 {
 	color: #fff;
 	text-decoration: underline;
 }
 
 .link2:hover {
-	color: #d5d5d5;
+	color: #d5d5d5;	
 }
-
 .link3 {
 	color: #178DB9;
 }
 
 .link3:hover {
-	color: #000;
+	color: #000;	
 }
-
 .link4 {
 	color: #8d8d8d;
 }
 
 .link4:hover {
-	color: #000;
+	color: #000;	
 }
 /*----------------HEADER----------------*/
 #main-header {
@@ -272,7 +281,7 @@ footer {
 /*----------------MAIN CONTENT----------------*/
 #content {
 	float: left;
-	width: 660px;
+	width: 	660px;
 	padding: 10px;
 }
 
@@ -292,6 +301,7 @@ footer {
 .index-article header h4 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
+	
 }
 
 .index-article header time {
@@ -302,18 +312,40 @@ footer {
 	margin: 3px 0 3px;
 }
 
-#content p {
+.index-article section p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;		
+}
+
+/*----------------MAIN CONTENT2----------------*/
+#content2 {
+	width: 730px;
+	padding: 10px;
+	float: right;
+}
+
+#content2 h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+#content2 p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #000;
 	line-height: 20px;
 }
 
+
 /*----------------SIDEBAR----------------*/
 .index-sidebar {
 	width: 280px;
 	padding: 10px;
-	float: right;
+	float: right;	
 }
 
 .index-sidebar h3 {
@@ -327,7 +359,7 @@ footer {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #000;
-	line-height: 20px;
+	line-height: 20px;		
 }
 
 .index-sidebar-box {
@@ -351,6 +383,46 @@ ul.pdf-list li {
 	background: url(../images/pdf_ico.png) no-repeat 0 50%;
 	border-bottom: 1px dashed #9c9c9c;
 }
+
+
+/*----------------SIDEBAR2----------------*/
+.sidebar2 {
+	width: 210px;
+	margin: 10px;
+	min-height: 400px;
+	float: left;
+	background: #ebebeb;
+	border-bottom: 2px solid #c0c0c0;
+}
+
+.submenu1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #fff;
+	list-style: none;
+}
+
+.submenu1 li {
+	background: #888888;
+	padding: 7px 10px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #636363;
+}
+
+.submenu1 li:hover {
+	background: #01c8ec;
+}
+
+.submenu1 a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+}
+
+
 /*----------------STOPKA----------------*/
 #footer-wrapper {
 	position: relative;
