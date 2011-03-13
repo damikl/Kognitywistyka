@@ -300,6 +300,29 @@ footer {
 	margin: 0 0 5px;
 }
 
+.index-proposition {	
+	margin: 10px 0;
+	padding: 5px 0 10px;
+	
+}
+
+.index-proposition img{
+	float: left;
+	margin-right: 20px;
+}
+.index-proposition header h4 {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 18px;
+	padding: 0 0 5px 0;
+	
+}
+.index-proposition section p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+}
+
 .index-article {
 	border-bottom: 1px dashed #9c9c9c;
 	margin: 5px 0;
@@ -341,6 +364,14 @@ footer {
 	margin-bottom: 15px;
 }
 
+ 
+
+#content2 h3 time {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #8d8d8d;
+}
+
 #content2 p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -348,7 +379,17 @@ footer {
 	line-height: 20px;
 }
 
-
+#content2 div.image{
+	float: left;
+	margin: 10px;
+	border: 1px solid #8d8d8d;
+	width: 102px;
+	height: 102px;
+	
+}
+#content2 div.image	img{
+	margin: 1px;
+}
 /*----------------SIDEBAR----------------*/
 .index-sidebar {
 	width: 280px;
@@ -376,8 +417,28 @@ footer {
 	border-bottom: 2px solid #9c9c9c;
 }
 
+
 .last-index-sidebar-box {
 	border: 0;
+}
+
+.index-sidebar-box p.list{
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000;
+	
+}
+
+
+ul.list {
+	list-style: none;
+}
+
+ul.list li{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 8px 0 8px 0px;
+	border-bottom: 1px dashed #9c9c9c;
 }
 
 ul.pdf-list {
