@@ -63,28 +63,63 @@
 
 <!-- TREŚĆ WŁAŚCIWA STRONY -->
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; <a href="#" class="link1">Aktualności</a> &gt; Tytuł pełnej wiadomości</p>
-	<aside class="sidebar2">
-    	<ul class="submenu1">
-        	<li class="submenu-checked"><a href="#">Aktualności</a></li>
-            <li><a href="#">Galeria</a></li>
-            
-        </ul>
-    </aside>
-    <div id="content2">
-    	<h3>Tytuł pełnej wiadomości<br /><time>14 czercwa 2010</time></h3>
-    	
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolor.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia. </p>
-    	<div class="image"><img src="resources/images/gallery/man.jpg"></img></div>
-    	<div class="image"><img src="resources/images/gallery/woman.jpg"></img></div>
-    </div>
-    
+	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Analizy</p>
+	<div id="content-all">
+		<article class="index-article">
+			<header><h3>Analizy</h3></header>
+			<section>
+				<p class="analizy">Dokonaj analizy na bazie naszych raportów</p>
+				<select name="dataPublikacji">
+					<option value="">Wybierz typ raportu...</option>
+					<option value="1">Świetny</option>
+					<option value="2">Kiepski</option>
+				</select>
+			</section>
+		</article>
+		<article class="index-article">
+			<section>
+				<p class="analizy">Użyte słowa kluczowe:</p>
+				<p class="analizy">Użyte filtry:</p>
+			</section>
+		</article>
+		<article class="index-article-half">
+			<header><h4>Słowa kluczowe:</h4></header>
+			<section>
+				<form class="analiza-form">
+        			<div>
+            			<label for="word-keys">Zawierający słowa:</label>
+            			<input type="text" name="word-keys" />
+            		</div>
+            		<div>
+            			<label for="sentence">Zawierający zdanie:</label>
+            			<input type="text" name="sentence" />
+            		</div>
+            		<div>
+            			<label for="sentence">Zawierający słowa w tytułe:</label>
+            			<input type="text" name="sentence" />
+            		</div>
+            		<div>
+            			<label for="sentence">Nie zawierająy słowa:</label>
+            			<input type="text" name="sentence" />
+            		</div>
+            		<input type="submit" value="Szukaj" class="button analiza-button" />
+        		</form>
+			</section>
+		</article>
+		<article class="index-article-half">
+			<header><h4>Filtrowanie wyników:</h4></header>
+			<section>
+				<span>Data publikacji</span>
+				<select name="dataPublikacji">
+					<option value="">Wybierz...</option>
+					<option value="1">2000</option>
+					<option value="2">2001</option>
+				</select>
+			</section>
+		</article>
+	</div>
+	<!--  KONIEC TREŚCI WŁASCIWEJ STRONY -->
 </div>
-
-<!--  KONIEC TREŚCI WŁASCIWEJ STRONY -->
-
 <!-- Poniżej stopka (taka sama dla każdej podstrony) -->
 <footer>
 	<div id="footer-wrapper">

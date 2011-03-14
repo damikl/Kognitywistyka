@@ -287,11 +287,19 @@ footer {
 }
 
 /*----------------MAIN CONTENT----------------*/
+#content-all{
+	float: left;
+	padding: 10px;
+	width: 960px;
+}
+
+
 #content {
 	float: left;
 	width: 	660px;
 	padding: 10px;
 }
+
 
 #content h3 {
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -329,11 +337,62 @@ footer {
 	padding: 5px 0 10px;
 }
 
+.index-article section select{
+	width: 200px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+}
+
+.index-article-half{
+	float: left;
+	margin: 5px 0;
+	padding-right: 30px;
+}
+
+.index-article-half section{
+	float: left;
+	margin: 15px 0;
+	clear: both;
+}
+
+
+
+
+.index-article-half section p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	padding-right: 80px;
+	float: left;
+}
+
+.index-article-half section select{
+	float: left;
+	width: 150px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+}
+
+.index-article-half header h4{
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000;
+}
+
 .index-article header h4 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
 	
 }
+
+.index-article header h3 {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000;
+}
+
 
 .index-article header time {
 	font-family: Arial, Helvetica, sans-serif;
@@ -343,12 +402,21 @@ footer {
 	margin: 3px 0 3px;
 }
 
+
 .index-article section p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #000;
 	line-height: 20px;		
 }
+
+.index-article section p.analizy {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	padding: 5px 0 5px 0;
+}
+
 
 /*----------------MAIN CONTENT2----------------*/
 #content2 {
@@ -396,6 +464,14 @@ footer {
 	padding: 10px;
 	float: right;	
 }
+
+.index-sidebar a.button-right {
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+
 
 .index-sidebar h3 {
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -499,7 +575,43 @@ ul.pdf-list li {
 	width: 100%;
 }
 
-/*----------------FORMULARZ KONTAKTOWY----------------*/
+/*----------------FORMULARZ KONTAKTOWY, ANALIZY----------------*/
+
+.analiza-form{
+	overflow: auto;
+}
+
+.analiza-form div {
+	clear: both;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+.analiza-form label{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	padding: 8px 0;	
+	width: 175px;
+	float: left;
+}
+
+.analiza-form div input{
+	float: left;
+	width: 290px;
+	padding: 0 10px;	
+	height: 24px;
+	font-size: 13px;
+	border: 1px solid b3b3b3;
+}
+
+.analiza-button {
+	width: 70px;
+	display: block;
+	float: right;
+}
+
+
 .contact-form {
 	width: 600px;	
 }
