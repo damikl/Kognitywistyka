@@ -5,10 +5,16 @@
   */
 .glowna #head-wrapper nav .nav-1-link a,
 .oprojekcie #head-wrapper nav .nav-2-link a,
+.aktualnosci #head-wrapper nav .nav-3-link a,
+.analizy #head-wrapper nav .nav-5-link a,
 .kontakt #head-wrapper nav .nav-6-link a
 	{
 	border: 0;
 	background: url(../images/menu-bg.png) center;
+}
+
+.naukowiec #jestem-naukowcem {
+	background: url(../images/jestem-naukowcem-bg-h.png) repeat-x;
 }
 
 /*----------------OGÓLNE----------------*/
@@ -335,6 +341,7 @@ footer {
 	border-bottom: 1px dashed #9c9c9c;
 	margin: 5px 0;
 	padding: 5px 0 10px;
+	overflow: auto;
 }
 
 .index-article section select{
@@ -355,9 +362,6 @@ footer {
 	margin: 15px 0;
 	clear: both;
 }
-
-
-
 
 .index-article-half section p{
 	font-family: Arial, Helvetica, sans-serif;
@@ -417,7 +421,12 @@ footer {
 	padding: 5px 0 5px 0;
 }
 
-
+.aktualnosci-header {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #000;
+	margin: 10px 0;
+}
 /*----------------MAIN CONTENT2----------------*/
 #content2 {
 	width: 730px;
@@ -447,7 +456,7 @@ footer {
 	line-height: 20px;
 }
 
-#content2 div.image{
+#content2 div.image-aktualnosci{
 	float: left;
 	margin: 10px;
 	border: 1px solid #8d8d8d;
@@ -455,7 +464,7 @@ footer {
 	height: 102px;
 	
 }
-#content2 div.image	img{
+#content2 div.image-aktualnosci	img{
 	margin: 1px;
 }
 /*----------------SIDEBAR----------------*/
