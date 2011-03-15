@@ -17,6 +17,10 @@
 	background: url(../images/jestem-naukowcem-bg-h.png) repeat-x;
 }
 
+.przedsiebiorca #jestem-przedsiebiorca {
+	background: url(../images/jestem-przedsiebiorca-bg-h.png) repeat-x;
+}
+
 /*----------------OGÓLNE----------------*/
 .button {
 	display: inline-block;
@@ -35,6 +39,11 @@
 	border-style: outset;
 	outline: none;
 	position: relative;
+}
+
+.button:hover {
+	background: #5c96dc;
+	border: 1px solid #4981c4;
 }
 
 .link-right {
@@ -292,6 +301,17 @@ footer {
 	color: #000;	
 }
 
+.jestem-list {
+	list-style: none;
+}
+
+.jestem-list li{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 8px 0 8px 0px;
+	border-bottom: 1px dashed #9c9c9c;
+}
+
 /*----------------MAIN CONTENT----------------*/
 #content-all{
 	float: left;
@@ -317,7 +337,6 @@ footer {
 .index-proposition {	
 	margin: 10px 0;
 	padding: 5px 0 10px;
-	
 }
 
 .index-proposition img{
@@ -330,6 +349,11 @@ footer {
 	padding: 0 0 5px 0;
 	
 }
+
+.index-proposition section{
+	overflow: auto;
+}
+
 .index-proposition section p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -480,11 +504,16 @@ footer {
 	margin-bottom: 5px;
 }
 
-
-
 .index-sidebar h3 {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 20px;
+	color: #000;
+	margin: 0 0 5px;
+}
+
+.index-sidebar h4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
 	color: #000;
 	margin: 0 0 5px;
 }
@@ -500,30 +529,12 @@ footer {
 	margin-bottom: 10px;
 	padding-bottom: 10px;
 	border-bottom: 2px solid #9c9c9c;
+	overflow: auto;
 }
 
 
 .last-index-sidebar-box {
 	border: 0;
-}
-
-.index-sidebar-box p.list{
-	font-family: Georgia, Helvetica, sans-serif;
-	font-size: 15px;
-	color: #000;
-	
-}
-
-
-ul.list {
-	list-style: none;
-}
-
-ul.list li{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	padding: 8px 0 8px 0px;
-	border-bottom: 1px dashed #9c9c9c;
 }
 
 ul.pdf-list {
@@ -673,6 +684,79 @@ ul.pdf-list li {
 	color: #ff0000 !important;
 	padding: 3px 0;
 	float: left;
+}
+
+/*----------------FORMULARZ TWOJE DANE----------------*/
+.account-form {
+	width: 600px;	
+}
+
+.account-form div {
+	clear: both;
+	margin: 5px 0;
+	overflow: auto;
+}
+
+.account-form label{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	padding: 8px 0;
+	width: 140px;
+	display: inline-block;
+	float: left;
+}
+
+.account-form div input.account-text{
+	float: left;
+	width: 160px;
+	height: 24px;
+	padding: 0 10px;
+	margin-right: 10px;
+	font-size: 13px;
+	border: 1px solid b3b3b3;	
+}
+
+.account-button {
+	width: 70px;
+	display: block;
+	float: right;
+	margin-right: 5px;
+}
+
+.account-form textarea {
+	float: left;
+	width: 440px;
+	height: 200px;
+	padding: 5px;
+	font-size: 13px;
+	border: 1px solid b3b3b3;	
+}
+
+.account-form div p.form-warning {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ff0000 !important;
+	padding: 3px 0;
+	float: left;
+}
+
+.account-checkboxes p{
+	width: 70px;
+	float: left;
+}
+
+.account-checkboxes input{
+	float: left;
+	margin-right: 5px;
+}
+
+.account-button {
+	width: 100px;
+	display: block;
+	float: right;
+	margin-right: 5px;
+	text-align: center;
 }
 
 /*----------------STOPKA----------------*/
