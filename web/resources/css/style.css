@@ -6,6 +6,7 @@
 .glowna #head-wrapper nav .nav-1-link a,
 .oprojekcie #head-wrapper nav .nav-2-link a,
 .aktualnosci #head-wrapper nav .nav-3-link a,
+.forum #head-wrapper nav .nav-4-link a,
 .analizy #head-wrapper nav .nav-5-link a,
 .kontakt #head-wrapper nav .nav-6-link a
 	{
@@ -310,6 +311,14 @@ footer {
 	font-size: 13px;
 	padding: 8px 0 8px 0px;
 	border-bottom: 1px dashed #9c9c9c;
+}
+
+.forum-info {
+	display: inline-box;
+	width: 350px;
+	margin: 100px auto;
+	font-size: 30px;
+	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /*----------------MAIN CONTENT----------------*/
@@ -796,7 +805,7 @@ ul.pdf-list li {
 
 .publikacje-table h4 {
 	font-size: 15px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 
