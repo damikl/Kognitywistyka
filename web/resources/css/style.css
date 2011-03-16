@@ -811,36 +811,43 @@ ul.pdf-list li {
 
 /*----------------PAGINACJA----------------*/
 .paginacja-box {
-	width: 250px;		/*TEGO NIE POWINNO BYĆ!!!! - DO NAPRAWY*/
+	width: 300px;		/*TEGO NIE POWINNO BYĆ!!!! - DO NAPRAWY*/
 	margin: auto;
 	overflow: auto;
 	height: 40px;
 }
 
-.paginacja-next {
+.paginacja-prev {
 	float: left;
-	margin: 0 5px;
 	font-size: 30px;
+	font-weight: bold;
+}
+
+.paginacja-next {
+	float: right;	
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .paginacja-number {
-	float: left;
-	margin: 6px;
-}
-
-.paginacja-number a {
-	padding: 10px;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	padding: 5px 0;
 }
 
 .paginacja-number span {
 	border: 1px solid #c0c0c0;
 	background: #ebebeb;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .paginacja-selected {
-	padding: 0 10px;
-	font-weight: bold;
+	padding: 0 5px;	
+}
+
+.paginacja-number a {
+	padding: 10px 5px;
 }
 
 .paginacja-number span:hover, .paginacja-selected {
