@@ -474,6 +474,13 @@ footer {
 	margin-bottom: 15px;
 }
 
+#content2 h4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 19px;
+	color: #000;
+	margin-bottom: 15px;
+}
+
  
 
 #content2 h3 time {
@@ -488,6 +495,71 @@ footer {
 	color: #000;
 	line-height: 20px;
 }
+
+
+/************** Zmiany, coś chyba nie do końca ****************/
+#content2 p.large{
+	float: left;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 19px;
+	color: #000;
+	padding-right: 10px;
+}
+
+#content2 div.search-box{
+	padding-top: 10px;
+	clear: both;
+	margin-bottom: 10px;
+}
+
+#content2 div.found{
+	width: 700px;
+	height: 40px;
+	clear: both;
+	margin-bottom:1px;	
+}
+
+#content2 div.found-border{
+	border: 1px solid #8d8d8d;
+	
+}
+
+#content2 div.found .pole{
+	float: left;
+	text-indent: 10px;
+	font-family:'Arial CE'; 
+	font-size:15px;
+	padding-top: 10px;
+	
+}
+
+#content2 div.found .nazwa{
+	width: 300px;
+}
+
+
+#content2 div.found .nazwa-link{
+	width: 300px;
+	color:#0000FF; 
+	text-decoration: none;
+}
+
+#content2 div.found .typ{
+	width: 200px;
+}
+
+#content2 div.found .data{
+	width: 130px;
+}
+
+#content2 div.found .zobacz-link{
+	width: 50px;
+	color:#0000FF;
+	text-decoration: none;
+}
+
+/********************************************************/
+
 
 #content2 div.image-aktualnosci{
 	float: left;
