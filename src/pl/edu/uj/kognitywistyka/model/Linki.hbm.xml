@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pl.edu.uj.kognitywistyka.model.Linki" table="k_Linki">
+		<id name="Id" column="Id">
+			<generator class="increment"/>
+		</id>
+		<property name="Naglowek" column="Naglowek"/>
+		<property name="Url" column="Url"/>
+		<property name="Opis" column="Opis"/>
+   </class>
+</hibernate-mapping>
