@@ -4,6 +4,9 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import pl.edu.uj.kognitywistyka.visitor.UnauthorizedAccessAttempt;
+import pl.edu.uj.kognitywistyka.visitor.UserInfo;
+
 @ManagedBean(name = "visitor")
 @SessionScoped
 public class VisitorBean implements Serializable {

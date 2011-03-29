@@ -1,4 +1,4 @@
-package pl.edu.uj.kognitywistyka;
+package pl.edu.uj.kognitywistyka.visitor;
 
 public interface Storable {
 	String getDisplayedName();
