@@ -1,11 +1,11 @@
-package pl.edu.uj.kognitywistyka;
+package pl.edu.uj.kognitywistyka.managedbeans;
 
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import pl.edu.uj.kognitywistyka.aboutproject.front.bo.APFrontBo;
+import pl.edu.uj.kognitywistyka.aboutproject.bo.AboutProjectBo;
 
 @ManagedBean
 @RequestScoped
@@ -16,7 +16,7 @@ public class AboutProjectFrontBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	APFrontBo apfrontbo;
+	AboutProjectBo apfrontbo;
 
 	public String description;
 
@@ -28,7 +28,7 @@ public class AboutProjectFrontBean implements Serializable {
 		this.description = description;
 	}
 */
-	public void setAPFrontBo(APFrontBo apfrontbo) {
+	public void setAPFrontBo(AboutProjectBo apfrontbo) {
 		this.apfrontbo = apfrontbo;
 	}
 }

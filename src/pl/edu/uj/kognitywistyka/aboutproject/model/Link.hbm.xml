@@ -4,10 +4,12 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="pl.edu.uj.kognitywistyka.model.Stanowiska" table="k_Stanowiska">
-		<id name="Id" column="Id">
+    <class name="pl.edu.uj.kognitywistyka.aboutproject.model.Link" table="k_Linki">
+		<id name="linkId" column="Id">
 			<generator class="increment"/>
 		</id>
-		<property name="Nazwa" column="Nazwa"/>
+		<property name="name" column="Naglowek"/>
+		<property name="url" column="Url"/>
+		<property name="description" column="Opis"/>
    </class>
 </hibernate-mapping>

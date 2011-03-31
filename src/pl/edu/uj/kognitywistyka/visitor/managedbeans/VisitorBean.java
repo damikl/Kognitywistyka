@@ -1,4 +1,4 @@
-package pl.edu.uj.kognitywistyka;
+package pl.edu.uj.kognitywistyka.visitor.managedbeans;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;

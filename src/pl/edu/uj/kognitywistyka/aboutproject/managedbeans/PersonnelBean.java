@@ -1,4 +1,4 @@
-package pl.edu.uj.kognitywistyka.aboutproject.personnel;
+package pl.edu.uj.kognitywistyka.aboutproject.managedbeans;
 
 import java.io.Serializable;
 

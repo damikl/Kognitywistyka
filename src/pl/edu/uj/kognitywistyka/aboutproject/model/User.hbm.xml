@@ -4,17 +4,16 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="pl.edu.uj.kognitywistyka.model.Uzytkownicy" table="k_Uzytkownicy">
-		<id name="Id" column="Id">
+    <class name="pl.edu.uj.kognitywistyka.visitor.model.User" table="k_Uzytkownicy">
+		<id name="userId" column="Id">
 			<generator class="increment"/>
 		</id>
-		<property name="Login" column="Login"/>
-		<property name="Haslo" column="Haslo"/>
-		<property name="Email" column="Email"/>
-		<property name="Sol" column="Sol"/>
-		<property name="DataRejestracji" column="DataRejestracji"/>
-		<property name="Imie" column="Imie"/>
-		<property name="Nazwisko" column="Nazwisko"/>
+		<property name="login" column="Login"/>
+		<property name="password" column="Haslo"/>
+		<property name="email" column="Email"/>
+		<property name="date" column="DataRejestracji"/>
+		<property name="firstName" column="Imie"/>
+		<property name="lastName" column="Nazwisko"/>
 		<property name="TytulSpecjalizacja" column="TytulSpecjalizacja"/>
 		<property name="NazwaUczelniLabor" column="NazwaUczelniLabor"/>
 		<property name="Branza" column="Branza"/>
