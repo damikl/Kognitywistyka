@@ -884,6 +884,76 @@ ul.pdf-list li {
 	margin-bottom: 10px;
 }
 
+/*----------------PROFIL NAUKOWCA----------------*/
+.profil-naukowca {
+	border-bottom: 1px dashed #9c9c9c;
+	margin: 10px 0px;
+	padding: 0px 0px 20px;
+	overflow: auto;
+}
+
+.profil-naukowca header h1 {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+	color: #000;
+	padding: 0px 0px 10px;
+	margin: 0px 0px;
+}
+
+.profil-naukowca header h2 {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #000;
+	padding: 20px 0px 10px;
+	margin: 0px 0;
+}
+
+.profil-naukowca header h3 {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000;
+}
+
+.link-tag {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 5px 0px 5px;
+}
+
+.profil-naukowca section p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+}
+
+.profil-naukowca section p.withlh {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+}
+
+.profil-naukowca section p.link15 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000;
+	padding: 15px 0px 5px;
+}
+
+.profil-naukowca section p.data {
+	font-family: Georgia, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #8D8D8D;
+	padding: 0px 0px 5px;
+}
+
+.profil-naukowca header tagi {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 0px 0px 20px;
+}
 
 /*----------------PAGINACJA----------------*/
 .paginacja-box {
