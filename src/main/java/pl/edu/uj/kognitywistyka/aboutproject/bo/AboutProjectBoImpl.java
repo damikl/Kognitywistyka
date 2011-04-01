@@ -1,23 +1,22 @@
 package pl.edu.uj.kognitywistyka.aboutproject.bo;
 
+import java.io.Serializable;
+
+import pl.edu.uj.kognitywistyka.aboutproject.model.AboutProject;
 import pl.edu.uj.kognitywistyka.aboutproject.dao.AboutProjectDao;
 
-public class AboutProjectBoImpl implements AboutProjectBo {
-	AboutProjectDao apfrontdao;
+public class AboutProjectBoImpl implements AboutProjectBo, Serializable {
 
-	public void setAPFrontDao(AboutProjectDao apfrontdao) {
-		this.apfrontdao = apfrontdao;
+	private static final long serialVersionUID = 7538869973656457774L;
+	
+	AboutProjectDao aboutProjectDao;
+	
+	public void setAboutProjectDao(AboutProjectDao aboutProjectDao) {
+		this.aboutProjectDao = aboutProjectDao;
 	}
 
-	@Override
-	public void setDescription(String desc) {
-		apfrontdao.setDescription(desc);
-
-	}
-
-	@Override
-	public String getDescription() {
-		return apfrontdao.getDescription();
+	public AboutProject findLatestAboutDescription() {
+		return aboutProjectDao.findLatestAboutDescription();
 	}
 
 }

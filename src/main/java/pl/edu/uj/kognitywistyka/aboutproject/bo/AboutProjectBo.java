@@ -1,7 +1,7 @@
 package pl.edu.uj.kognitywistyka.aboutproject.bo;
 
-public interface AboutProjectBo {
-	void setDescription(String desc);
+import pl.edu.uj.kognitywistyka.aboutproject.model.AboutProject;
 
-	String getDescription();
+public interface AboutProjectBo {
+	AboutProject findLatestAboutDescription();
 }
