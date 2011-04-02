@@ -16,7 +16,7 @@ public class AboutProjectBoImpl implements AboutProjectBo, Serializable {
 	}
 
 	public AboutProject findLatestAboutDescription() {
-		return aboutProjectDao.findLatestAboutDescription();
+		return aboutProjectDao.findLatestAboutProject();
 	}
 
 }

@@ -8,17 +8,17 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import pl.edu.uj.kognitywistyka.aboutproject.model.AboutProject;
 
 public class AboutProjectDaoImpl extends HibernateDaoSupport 
-	implements AboutProjectDao {
+implements AboutProjectDao {
 
-	@SuppressWarnings("unchecked")
-	private List<AboutProject> findAllAboutDescriptions() {
-		HibernateTemplate ht = getHibernateTemplate();
-		ht.setMaxResults(3);
-		return getHibernateTemplate().find("from AboutProject order by Data desc");
-	}
+@SuppressWarnings("unchecked")
+private List<AboutProject> findAllAboutProjects() {
+	HibernateTemplate ht = getHibernateTemplate();
+	ht.setMaxResults(3);
+	return ht.find("from AboutProject order by Data desc");
+}
 
-	public AboutProject findLatestAboutDescription() {
-		return findAllAboutDescriptions().get(0);
-	}
+public AboutProject findLatestAboutProject() {
+	return findAllAboutProjects().get(0);
+}
 
 }
