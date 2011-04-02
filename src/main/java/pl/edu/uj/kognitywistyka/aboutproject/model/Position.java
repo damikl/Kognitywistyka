@@ -1,14 +1,14 @@
 package pl.edu.uj.kognitywistyka.aboutproject.model;
 
 public class Position {
-	private int positionId;
+	private long positionId;
 	private String name;
 
-	public int getPositionId() {
+	public long getPositionId() {
 		return positionId;
 	}
 
-	public void setPositionId(int postionId) {
+	public void setPositionId(long postionId) {
 		this.positionId = postionId;
 	}
 
