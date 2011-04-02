@@ -1,8 +1,12 @@
 package pl.edu.uj.kognitywistyka.aboutproject.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Position {
 	private long positionId;
 	private String name;
+	private Set<Employee> employees = new HashSet<Employee>();
 
 	public long getPositionId() {
 		return positionId;
@@ -18,6 +22,14 @@ public class Position {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public Set<Employee> getEmployees() {
+		return employees;
 	}
 
 }
