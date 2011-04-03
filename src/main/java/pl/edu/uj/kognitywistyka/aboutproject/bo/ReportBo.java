@@ -1,5 +1,9 @@
 package pl.edu.uj.kognitywistyka.aboutproject.bo;
 
-public interface ReportBo {
+import java.util.List;
 
+import pl.edu.uj.kognitywistyka.aboutproject.model.Report;
+
+public interface ReportBo {
+	List<Report> findAllReports();
 }
