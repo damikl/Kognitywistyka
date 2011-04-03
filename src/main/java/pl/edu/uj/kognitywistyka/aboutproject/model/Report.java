@@ -1,6 +1,6 @@
 package pl.edu.uj.kognitywistyka.aboutproject.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Report{
 	private long reportId;

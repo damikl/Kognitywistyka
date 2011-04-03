@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Kognitywistyka FORESIGHT</title>
@@ -64,71 +66,11 @@
 <!-- TREŚĆ WŁAŚCIWA STRONY -->
 <div id="site-wrapper">
 <div id="content">
-     <h3>Aktualności</h3>
-        <article class="index-article">
-         <header>
-             <h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-            </section>
-        </article>
-        <article class="index-article">
-         <header>
-             <h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-            </section>
-        </article>
-        <article class="index-article">
-         <header>
-             <h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-            </section>
-        </article>
-        <article class="index-article">
-         <header>
-             <h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-            </section>
-        </article>
-        <p class="link-right"><a href="#" class="link3 link-more">Zobacz pozostałe wiadomości</a></p>
-    </div>
-    <aside class="index-sidebar">
-     <div class="index-sidebar-box">
-         <h3>Analizy</h3>
-            <p>Zbiór dokumentów z internetu związanych z kognitywistyką</p>
-            <ul class="pdf-list">
-             <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-            </ul>
-            <p class="link-right"><a href="#" class="link3 link-more">Więcej dokumentów</a></p>
-        </div>
-        <div class="index-sidebar-box last-index-sidebar-box">
-         <h3>Raporty</h3>
-            <p>Zbiór dokumentów z internetu związanych z kognitywistyką</p>
-            <ul class="pdf-list">
-             <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
-            </ul>
-            <p class="link-right"><a href="#" class="link3 link-more">Więcej raportów</a></p>
-        </div>
-    </aside>
+     <h3>Testuję ManagedBeans</h3>
+  	 <p>#{employeeBean}</p>
+  	 <p>#{linkBean.findAllLinks()}</p>
+  	 <p>#{reportBean.findAllReports()}</p>
+</div>
 </div>
 <!-- KONIEC TREŚCI WŁASCIWEJ STRONY -->
 

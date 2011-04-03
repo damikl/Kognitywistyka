@@ -12,7 +12,7 @@ import pl.edu.uj.kognitywistyka.aboutproject.model.Report;
 
 @ManagedBean
 @RequestScoped
-public class ReportBeen implements Serializable {
+public class ReportBean implements Serializable {
 
 	private static final long serialVersionUID = -8497001582603879607L;
 
