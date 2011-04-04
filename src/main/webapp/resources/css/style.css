@@ -476,16 +476,9 @@ footer {
 	font-size: 20px;
 	color: #000;
 	margin-bottom: 15px;
+	clear: left;
 }
 
-#content2 h4 {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 19px;
-	color: #000;
-	margin-bottom: 15px;
-}
-
- 
 
 #content2 h3 time {
 	font-family: Georgia, Helvetica, sans-serif;
@@ -500,6 +493,42 @@ footer {
 	line-height: 20px;
 }
 
+.kadra {
+	clear: both;	
+	margin: 20px 0;
+}
+
+.kadra header h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	color: #000;
+}
+
+.tytul-naukowca {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+.kadra .opis-naukowca {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;
+}
+
+.kadra-zdjecie {
+	float: left;
+	border: 1px solid #888888;
+	width: 98px;
+	min-height: 100px;
+	padding: 3px 3px 0;
+	height-min: 50px;
+	margin: 0 10px 10px 0;
+	background: url(../images/kadra-brak.png) no-repeat;
+}
 
 /************** Zmiany, coś chyba nie do końca ****************/
 #content2 p.large{
@@ -667,7 +696,11 @@ ul.pdf-list li {
 	border-bottom: 1px solid #636363;
 }
 
-.submenu1 li:hover, .submenu-checked {
+.submenu1 li:hover, 
+.submenu-checked1 .submenu-element1,
+.submenu-checked2 .submenu-element2,
+.submenu-checked3 .submenu-element3,
+.submenu-checked4 .submenu-element4 {
 	background: #01c8ec !important;
 }
 
