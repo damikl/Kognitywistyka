@@ -530,6 +530,40 @@ footer {
 	background: url(../images/kadra-brak.png) no-repeat;
 }
 
+.raport {
+	border-bottom: 1px dashed #9c9c9c;
+	overflow: auto;
+	padding: 0 0 10px;
+	margin: 10px 0;
+}
+
+.raport-pobierz {
+	float: right;
+	font-size: 13px;
+}
+
+.raport h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	background:url(../images/pdf_ico.png) left no-repeat;
+	padding: 3px 0 3px 20px;
+}
+
+.raport time {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	color: #8d8d8d;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.raport p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;	
+}
+
 /************** Zmiany, coś chyba nie do końca ****************/
 #content2 p.large{
 	float: left;
@@ -996,15 +1030,15 @@ ul.pdf-list li {
 	height: 40px;
 }
 
-.paginacja-prev {
+.paginacja-prev p{
 	float: left;
-	font-size: 30px;
+	font-size: 30px !important;
 	font-weight: bold;
 }
 
-.paginacja-next {
+.paginacja-next p{
 	float: right;	
-	font-size: 30px;
+	font-size: 30px !important;
 	font-weight: bold;
 }
 
