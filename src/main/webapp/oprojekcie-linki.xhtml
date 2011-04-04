@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets">
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -19,7 +20,11 @@
 	<ui:define name="siteContent">
 
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; <a href="#" class="link1">O projekcie</a> &gt; Kadra projektu</p>
+	<p id="site-navigation">
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+		<h:link value="O projekcie" outcome="oprojekcie" class="link1" /> &gt; 
+		Baza linków
+	</p>
 	
    	<ui:include src="/templates/sections/sidebars/oprojekcie.xhtml" />
 	

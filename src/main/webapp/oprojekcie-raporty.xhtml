@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets">
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -20,9 +21,10 @@
 
 	<div id="site-wrapper">
 		<p id="site-navigation">
-			<a href="#" class="link1">Strona główna</a> &gt; <a href="#"
-				class="link1">O projekcie</a> &gt; Raporty
-		</p>
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+		<h:link value="O projekcie" outcome="oprojekcie" class="link1" /> &gt; 
+		Raporty
+	</p>
 
 		<ui:include src="/templates/sections/sidebars/oprojekcie.xhtml" />
 
@@ -93,11 +95,10 @@
 					</p>
 				</div>
 				<div class="paginacja-number">
-					<span><a href="#" class="link1">1</a>
-					</span> <span class="paginacja-selected">2</span> <span><a
-						href="#" class="link1">3</a>
-					</span> <span><a href="#" class="link1">4</a>
-					</span>
+					<span><a href="#" class="link1">1</a></span>
+					<span class="paginacja-selected">2</span>
+					<span><a href="#" class="link1">3</a></span>
+					<span><a href="#" class="link1">4</a></span>
 				</div>
 			</div>
 		</div>
