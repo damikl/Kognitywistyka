@@ -564,6 +564,23 @@ footer {
 	line-height: 20px;	
 }
 
+.baza-linkow {
+	overflow: auto;
+	padding: 0 0 10px;
+	margin: 10px 0;
+}
+
+.baza-linkow h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+.baza-linkow p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000;
+	line-height: 20px;	
+}
 /************** Zmiany, coś chyba nie do końca ****************/
 #content2 p.large{
 	float: left;
@@ -725,7 +742,7 @@ ul.pdf-list li {
 
 .submenu1 li {
 	background: #888888;
-	padding: 7px 10px;
+	
 	border-top: 1px solid white;
 	border-bottom: 1px solid #636363;
 }
@@ -745,6 +762,7 @@ ul.pdf-list li {
 	text-decoration: none;
 	display: block;
 	width: 100%;
+	padding: 7px 10px;
 }
 
 /*----------------FORMULARZ KONTAKTOWY, ANALIZY----------------*/

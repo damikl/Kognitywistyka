@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		  xmlns:ui="http://java.sun.com/jsf/facelets">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="oprojekcie" />
+	
+<!-- Tu podajemy która pozycja submenu ma być zaznaczona -->
+	<ui:param name="submenuChecked" value="submenu-checked4" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+	<ui:define name="siteContent">
+
+<div id="site-wrapper">
+	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; <a href="#" class="link1">O projekcie</a> &gt; Kadra projektu</p>
+	
+   	<ui:include src="/templates/sections/sidebars/oprojekcie.xhtml" />
+	
+    <div id="content2">
+    	<h3>Baza linków</h3>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+        <div class="baza-linkow">
+        	<header>
+                <h4><a href="#" class="link1">Link</a></h4>
+            </header>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
+        </div>
+    </div>
+</div>
+
+	</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>
