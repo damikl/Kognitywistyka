@@ -29,9 +29,16 @@ public class AboutProjectBean implements Serializable {
 
 	public String getDescription() {
 		if(aboutProjectBo != null)
-			return aboutProjectBo.findLatestAboutDescription().getDescription();
+		{
+			AboutProject ap = aboutProjectBo.findLatestAboutDescription();
+			if(ap != null)
+				return ap.getDescription();
+			else
+				return " "; 
+		}
 		else
 			return "";
+
 	}
 
 	public AboutProject getAboutDescription() {

@@ -4,18 +4,18 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="pl.edu.uj.kognitywistyka.aboutproject.model.AboutProject" 
-		   table="k_O_Projekcie">
+		   table="k_aboutProject">
 
 		<id name="aboutProjectId" type="long">
 			<column name="Id" />
-			<generator class="identity" />
+			<generator class="native" />
 		</id>
 
 		<property name="description" type="java.lang.String">
-			<column name="Opis" not-null="true"/>
+			<column name="description" not-null="true"/>
 		</property>
 		<property name="date" type="timestamp">
-			<column name="Data" not-null="true" length="19" />
+			<column name="date" not-null="true" length="19" />
 		</property>
 		
 	</class>
