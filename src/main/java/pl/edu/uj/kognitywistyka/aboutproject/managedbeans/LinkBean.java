@@ -23,7 +23,7 @@ public class LinkBean implements Serializable {
 		this.linkBo = linkBo;
 	}
 	
-	public List<Link> findAllLinks() {
+	public List<Link> getAllLinks() {
 		return linkBo.findAllLinks();
 	}
 

@@ -30,42 +30,14 @@
 	
     <div id="content2">
     	<h3>Baza linków</h3>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
-        <div class="baza-linkow">
-        	<header>
-                <h4><a href="#" class="link1">Link</a></h4>
-            </header>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>            
-        </div>
+    	<ui:repeat var="link" value="#{linkBean.allLinks}">
+    		<div class="baza-linkow">
+	        	<header>
+	                <h4><h:outputLink value="#{link.url}" class="link1">#{link.name}</h:outputLink></h4>
+	            </header>
+				<p>#{link.description}</p>            
+	        </div>
+    	</ui:repeat>
     </div>
 </div>
 
