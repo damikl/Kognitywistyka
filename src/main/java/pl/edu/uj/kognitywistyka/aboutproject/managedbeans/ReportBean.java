@@ -23,7 +23,7 @@ public class ReportBean implements Serializable {
 		this.reportBo = reportBo;
 	}
 	
-	public List<Report> findAllReports() {
+	public List<Report> getAllReports() {
 		return reportBo.findAllReports();
 	}
 }

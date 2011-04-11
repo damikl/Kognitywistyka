@@ -30,59 +30,19 @@
 
 		<div id="content2">
 			<h3>Raporty</h3>
-			<div class="raport">
-				<a href="#" class="link1 raport-pobierz">pobierz</a>
-				<header>
-					<h4>
-						<a href="#" class="link1">Nazwa raportu</a>
-					</h4>
-					<time datetime="14-06-2010">14 czerwca 2010</time>
-				</header>
-				<p>Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem aperiam,
-					eaque ipsa quae ab illo inventore veritatis et quasi architecto
-					beatae vitae dicta sunt explicabo.</p>
-			</div>
-			<div class="raport">
-				<a href="#" class="link1 raport-pobierz">pobierz</a>
-				<header>
-					<h4>
-						<a href="#" class="link1">Nazwa raportu</a>
-					</h4>
-					<time datetime="14-06-2010">14 czerwca 2010</time>
-				</header>
-				<p>Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem aperiam,
-					eaque ipsa quae ab illo inventore veritatis et quasi architecto
-					beatae vitae dicta sunt explicabo.</p>
-			</div>
-			<div class="raport">
-				<a href="#" class="link1 raport-pobierz">pobierz</a>
-				<header>
-					<h4>
-						<a href="#" class="link1">Nazwa raportu</a>
-					</h4>
-					<time datetime="14-06-2010">14 czerwca 2010</time>
-				</header>
-				<p>Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem aperiam,
-					eaque ipsa quae ab illo inventore veritatis et quasi architecto
-					beatae vitae dicta sunt explicabo.</p>
-			</div>
-			<div class="raport">
-				<a href="#" class="link1 raport-pobierz">pobierz</a>
-				<header>
-					<h4>
-						<a href="#" class="link1">Nazwa raportu</a>
-					</h4>
-					<time datetime="14-06-2010">14 czerwca 2010</time>
-				</header>
-				<p>Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem aperiam,
-					eaque ipsa quae ab illo inventore veritatis et quasi architecto
-					beatae vitae dicta sunt explicabo.</p>
-			</div>
-
+			<ui:repeat var="report" value="#{reportBean.allReports}">
+				<div class="raport">
+					<a href="#" class="link1 raport-pobierz">pobierz</a>
+					<header>
+						<h4>
+							<a href="#" class="link1">#{report.title}</a>
+						</h4>
+						<time datetime="#{report.date}">#{report.shortDate()}</time>
+					</header>
+					<p>#{report.content}</p>
+				</div>
+			</ui:repeat>
+			
 			<div class="paginacja-box">
 				<div class="paginacja-prev">
 					<p>

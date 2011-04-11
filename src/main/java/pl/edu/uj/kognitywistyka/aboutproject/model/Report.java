@@ -1,5 +1,6 @@
 package pl.edu.uj.kognitywistyka.aboutproject.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Report{
@@ -7,6 +8,8 @@ public class Report{
 	private String title;
 	private Date date;
 	private String content;
+	
+	private SimpleDateFormat shortDateFormatter = new SimpleDateFormat("dd-mm-yyyy");
 	
 	public long getReportId() {
 		return reportId;
@@ -23,6 +26,11 @@ public class Report{
 	public Date getDate() {
 		return date;
 	}
+	
+	public String shortDate() {
+		return shortDateFormatter.format(date);
+	}
+	
 	public void setDate(Date date) {
 		this.date = date;
 	}
