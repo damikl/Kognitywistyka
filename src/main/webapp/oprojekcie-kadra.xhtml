@@ -28,40 +28,21 @@
    	<ui:include src="/templates/sections/sidebars/oprojekcie.xhtml" />
 	
     <div id="content2">
-    	<h3>Wykonawcy</h3>
-        <article class="kadra">
-        	<div class="kadra-zdjecie"><img src="resources/images/kadra-foto.jpg" alt="" /></div>
-        	<header>
-            	<h4>Jan Kowalski</h4>
-                <p class="tytul-naukowca">Prof. hab. Uniwersytet Jagielloński</p>
-            </header>
-            <p class="opis-naukowca">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        </article>
-        <article class="kadra">
-        	<div class="kadra-zdjecie"><img src="#" alt="" /></div>
-        	<header>
-            	<h4>Jan Kowalski</h4>
-                <p class="tytul-naukowca">Prof. hab. Uniwersytet Jagielloński</p>
-            </header>
-            <p class="opis-naukowca">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        </article>
-        <h3>Współpracownicy</h3>
-        <article class="kadra">
-        	<div class="kadra-zdjecie"><img src="#" alt="" /></div>
-        	<header>
-            	<h4>Jan Kowalski</h4>
-                <p class="tytul-naukowca">Prof. hab. Uniwersytet Jagielloński</p>
-            </header>
-            <p class="opis-naukowca">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        </article>
-        <article class="kadra">
-        	<div class="kadra-zdjecie"><img src="#" alt="" /></div>
-        	<header>
-            	<h4>Jan Kowalski</h4>
-                <p class="tytul-naukowca">Prof. hab. Uniwersytet Jagielloński</p>
-            </header>
-            <p class="opis-naukowca">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-        </article>
+    	<ui:repeat var="positionList" value="#{employeeBean.employeesByPosition}">
+    		<h3>#{positionList.getPosition().getName()}</h3>
+    		<ui:repeat var="employee" value="#{positionList}">
+    			<article class="kadra">
+		        	<div class="kadra-zdjecie">
+		        		<h:graphicImage value="#{employee.photo}" rendered="#{!empty employee.photo}" />
+	        		</div>
+		        	<header>
+		            	<h4>#{employee.firstName} #{employee.lastName}</h4>
+		                <p class="tytul-naukowca">#{employee.title}</p>
+		            </header>
+		            <p class="opis-naukowca">#{employee.description}</p>
+	       		</article>
+    		</ui:repeat>
+    	</ui:repeat>
     </div>
 </div>
 
