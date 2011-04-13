@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="aktualnosci" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+<ui:define name="siteContent">
+
+	<div id="site-wrapper">
+		<p id="site-navigation">
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+		<h:link value="Aktualnosci" outcome="aktualnosci" class="link1" /> &gt; 
+		Galeria
+	</p>
+
+	<aside class="sidebar2">
+    	<ul class="submenu1">
+        	<li><a href="#">Aktualności</a></li>
+            <li class="submenu-checked"><a href="#">Galeria</a></li>
+            
+        </ul>
+    </aside>
+
+
+    <div id="content2">
+			<article class="index-article">
+	    		<section>
+	    		<h3>Tytuł galerii<br /><time>14 czerwca 2010</time></h3>
+		    	
+		    	<div class="image-aktualnosci"><img src="resources/images/gallery/man.jpg" /></div>
+    			<div class="image-aktualnosci"><img src="resources/images/gallery/woman.jpg" /></div>
+		    	</section>
+		    </article>
+		    
+		    <article class="index-article">
+	    		<section>
+	    		<h3>Tytuł galerii<br /><time>14 czerwca 2010</time></h3>
+		    	
+		    	<div class="image-aktualnosci"><img src="resources/images/gallery/man.jpg" /></div>
+    			<div class="image-aktualnosci"><img src="resources/images/gallery/woman.jpg" /></div>
+    			<div class="image-aktualnosci"><img src="resources/images/gallery/man.jpg" /></div>
+		    	</section>
+		    </article>
+		    
+		    <article class="index-article">
+	    		<section>
+	    		<h3>Tytuł galerii<br /><time>14 czerwca 2010</time></h3>
+		    	
+		    	<div class="image-aktualnosci"><img src="resources/images/gallery/man.jpg" /></div>
+    			<div class="image-aktualnosci"><img src="resources/images/gallery/woman.jpg" /></div>
+		    	</section>
+		    </article>
+
+			<div class="paginacja-box">
+				<div class="paginacja-prev">
+					<p>
+						<a href="#" class="link1">&lt;</a>
+					</p>
+				</div>
+				<div class="paginacja-next">
+					<p>
+						<a href="#" class="link1">&gt;</a>
+					</p>
+				</div>
+				<div class="paginacja-number">
+					<span class="paginacja-selected">1</span>
+					<span><a href="#" class="link1">2</a></span>
+					<span><a href="#" class="link1">3</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>
