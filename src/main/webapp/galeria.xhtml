@@ -13,8 +13,11 @@
 <!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
 	<ui:param name="bodyClass" value="aktualnosci" />
 	
+<!-- Tu podajemy która pozycja submenu ma być zaznaczona -->
+	<ui:param name="submenuChecked" value="submenu-checked2" />
+	
 <!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
-<ui:define name="siteContent">
+	<ui:define name="siteContent">
 
 	<div id="site-wrapper">
 		<p id="site-navigation">
@@ -23,14 +26,7 @@
 		Galeria
 	</p>
 
-	<aside class="sidebar2">
-    	<ul class="submenu1">
-        	<li><a href="#">Aktualności</a></li>
-            <li class="submenu-checked"><a href="#">Galeria</a></li>
-            
-        </ul>
-    </aside>
-
+	<ui:include src="/templates/sections/sidebars/aktualnosci.xhtml" />
 
     <div id="content2">
 			<article class="index-article">

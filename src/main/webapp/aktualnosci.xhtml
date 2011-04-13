@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets">
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -12,17 +13,20 @@
 <!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
 	<ui:param name="bodyClass" value="aktualnosci" />
 	
+<!-- Tu podajemy która pozycja submenu ma być zaznaczona -->
+	<ui:param name="submenuChecked" value="submenu-checked1" />
+	
 <!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
 	<ui:define name="siteContent">
 	
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Aktualności</p>
-	<aside class="sidebar2">
-    	<ul class="submenu1">
-        	<li class="submenu-checked"><a href="#">Aktualności</a></li>
-            <li><a href="#">Galeria</a></li>
-        </ul>
-    </aside>
+	<p id="site-navigation">
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+		Aktualności
+	</p>
+	
+	<ui:include src="/templates/sections/sidebars/aktualnosci.xhtml" />
+	
     <h3 class="aktualnosci-header">Aktualności</h3>
         <article class="index-article">
         	<header>
