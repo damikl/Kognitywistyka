@@ -8,6 +8,6 @@ public interface NewsDao {
 	
 	List<News> findAllNews();
 	
-	News getNews(News news);
+	News getNews(long id);
 	
 }

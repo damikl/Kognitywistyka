@@ -1,5 +1,6 @@
 package pl.edu.uj.kognitywistyka.news.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import pl.edu.uj.kognitywistyka.gallery.model.Gallery;
@@ -8,11 +9,14 @@ public class News  implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 5775487534886853918L;
 	
+	
 	private long newsId;
 	private String title;
 	private Date date;
 	private String content;
 	private Gallery gallery;
+	
+	private SimpleDateFormat shortDateFormatter = new SimpleDateFormat("dd-mm-yyyy");
 	
 	public long getNewsId() {
 		return newsId;
@@ -46,6 +50,9 @@ public class News  implements java.io.Serializable {
 		this.gallery = gallery;
 	}
 	
-	
+	public String getShortDate() {
+		return shortDateFormatter.format(date);
+	}
+
 	
 }

@@ -13,7 +13,7 @@ public class ReportDaoImpl extends HibernateDaoSupport
 	
 	@SuppressWarnings("unchecked")
 	public List<Report> findAllReports() {
-		return getHibernateTemplate().find("from Report");
+		return getHibernateTemplate().find("from Report order by date desc");
 	}
 	
 

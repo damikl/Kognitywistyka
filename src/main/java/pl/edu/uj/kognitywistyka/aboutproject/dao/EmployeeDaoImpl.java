@@ -12,7 +12,7 @@ public class EmployeeDaoImpl extends HibernateDaoSupport
 
 	@SuppressWarnings("unchecked")
 	public List<Employee> findAllEmployees() {
-		return getHibernateTemplate().find("from Employee");
+		return getHibernateTemplate().find("from Employee order by lastName asc");
 	}
 	
 }

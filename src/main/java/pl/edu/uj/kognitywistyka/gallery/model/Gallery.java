@@ -1,5 +1,6 @@
 package pl.edu.uj.kognitywistyka.gallery.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,7 @@ public class Gallery implements java.io.Serializable{
 	private Date date;
 	private Set<Photo> photos = new HashSet<Photo>();
 	
+	private SimpleDateFormat shortDateFormatter = new SimpleDateFormat("dd-mm-yyyy");
 	
 	public Set<Photo> getPhotos() {
 		return photos;
@@ -41,6 +43,9 @@ public class Gallery implements java.io.Serializable{
 		this.date = date;
 	}
 	
-	
+	public String getShortDate() {
+		return shortDateFormatter.format(date);
+	}
+
 	
 }
