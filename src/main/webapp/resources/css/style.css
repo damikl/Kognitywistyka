@@ -581,6 +581,18 @@ footer {
 	color: #000;
 	line-height: 20px;	
 }
+
+.galeria {
+	overflow: auto;
+	padding: 0 0 10px;
+	margin: 10px 0;
+}
+
+.galeria h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
 /************** Zmiany, coś chyba nie do końca ****************/
 #content2 p.large{
 	float: left;
@@ -1043,7 +1055,7 @@ ul.pdf-list li {
 /*----------------PAGINACJA----------------*/
 .paginacja-box {
 	width: 300px;		/*TEGO NIE POWINNO BYĆ!!!! - DO NAPRAWY*/
-	margin: auto;
+	margin:10px auto;
 	overflow: auto;
 	height: 40px;
 }
