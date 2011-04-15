@@ -9,7 +9,6 @@ import pl.edu.uj.kognitywistyka.news.model.News;
 
 public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 
-
 	@SuppressWarnings("unchecked")
 	public List<News> findAllNews() {
 		HibernateTemplate ht = getHibernateTemplate();
@@ -17,8 +16,8 @@ public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 		return ht.find("from News order by date desc");
 	}
 
-	public News getNews(long id) {
-		return (News) getHibernateTemplate().get(News.class, id);
+	public News getNews(long newsId) {
+		return (News) getHibernateTemplate().get(News.class, newsId);
 	}
 
 }
