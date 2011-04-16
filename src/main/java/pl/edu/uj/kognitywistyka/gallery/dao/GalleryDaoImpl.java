@@ -10,8 +10,8 @@ import pl.edu.uj.kognitywistyka.gallery.model.Gallery;
 public class GalleryDaoImpl extends HibernateDaoSupport implements GalleryDao{
 
 	
-	public void getGallery(Gallery gallery) {
-		getHibernateTemplate().get(Gallery.class, gallery.getGalleryId());
+	public Gallery getGallery(long galleryID) {
+		return (Gallery) getHibernateTemplate().get(Gallery.class, galleryID);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -23,4 +23,8 @@ public class NewsBoImpl implements Serializable, NewsBo {
 		return newsDao.getNews(newsId);
 	}
 
+	public News findLatestNews() {
+		return newsDao.findLatestNews();
+	}
+
 }

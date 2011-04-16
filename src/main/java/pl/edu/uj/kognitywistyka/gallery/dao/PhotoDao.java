@@ -1,6 +1,5 @@
 package pl.edu.uj.kognitywistyka.gallery.dao;
 
-import pl.edu.uj.kognitywistyka.gallery.model.Photo;
 
 public interface PhotoDao {
 

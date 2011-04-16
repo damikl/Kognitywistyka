@@ -8,5 +8,7 @@ public interface NewsBo {
 
 	List<News> findAllNews();
 
+	News findLatestNews();
+
 	News getNews(long newsId);
 }

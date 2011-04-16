@@ -19,5 +19,11 @@ public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 	public News getNews(long newsId) {
 		return (News) getHibernateTemplate().get(News.class, newsId);
 	}
+	
+	public News findLatestNews()
+	{
+		//TODO Ładan uzupełnij ;)
+		return null;
+	}
 
 }

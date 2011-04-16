@@ -15,7 +15,7 @@ import pl.edu.uj.kognitywistyka.news.model.News;
 public class NewsBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@ManagedProperty(name = "newsBo", value = "#{newsBo")
+	@ManagedProperty(name = "newsBo", value = "#{newsBo}")
 	NewsBo newsBo;
 
 	public void setNewsBo(NewsBo newsBo) {
@@ -24,6 +24,18 @@ public class NewsBean implements Serializable {
 
 	public List<News> getAllNews() {
 		return newsBo.findAllNews();
+	}
+	
+	public News getLatestNews() {
+		return newsBo.findLatestNews();
+	}
+
+	public News getNews(long newsId) {
+		return newsBo.getNews(newsId);
+	}
+
+	public News getNews(News news) {
+		return newsBo.getNews(news.getNewsId());
 	}
 
 }
