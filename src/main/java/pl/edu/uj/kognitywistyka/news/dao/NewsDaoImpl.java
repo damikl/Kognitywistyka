@@ -22,8 +22,8 @@ public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 	
 	public News findLatestNews()
 	{
-		//TODO Ładan uzupełnij ;)
-		return null;
+		List<News> list = findAllNews();
+		return list.isEmpty() ? null : list.get(0);
 	}
 
 }
