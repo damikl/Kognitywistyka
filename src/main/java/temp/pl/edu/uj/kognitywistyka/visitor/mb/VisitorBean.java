@@ -1,4 +1,4 @@
-package temp.pl.edu.uj.kognitywistyka.visitor.managedbeans;
+package temp.pl.edu.uj.kognitywistyka.visitor.mb;
 
 import java.io.Serializable;
 

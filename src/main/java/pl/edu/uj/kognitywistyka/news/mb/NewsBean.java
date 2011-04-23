@@ -1,4 +1,4 @@
-package pl.edu.uj.kognitywistyka.news.managedbeans;
+package pl.edu.uj.kognitywistyka.news.mb;
 
 import java.io.Serializable;
 import java.util.List;

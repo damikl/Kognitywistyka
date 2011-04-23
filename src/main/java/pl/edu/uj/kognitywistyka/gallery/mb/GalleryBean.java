@@ -1,4 +1,4 @@
-package pl.edu.uj.kognitywistyka.gallery.managedbeans;
+package pl.edu.uj.kognitywistyka.gallery.mb;
 
 import java.io.Serializable;
 import java.util.List;

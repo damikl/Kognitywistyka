@@ -860,12 +860,23 @@ ul.pdf-list li {
 	border: 1px solid b3b3b3;	
 }
 
-.contact-form div p {
+.contact-form div p.form-warning {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 11px !important;
 	color: #ff0000 !important;
-	padding: 3px 0;
+	padding: 1px 0;
 	float: left;
+	clear: left;
+	margin-left: 92px;
+	margin-bottom: 5px;
+}
+
+.contact-success {
+	font-family: Georgia, Helvetica, sans-serif !important;
+	font-size: 18px !important;
+	padding: 0 0 5px 0;
+	margin: 10px 0;
+	text-align: center;
 }
 
 /*----------------FORMULARZ TWOJE DANE----------------*/

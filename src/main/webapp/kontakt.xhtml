@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets">
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -28,23 +30,27 @@
     </aside>
     <div id="content2">
     	<h3>Napisz do nas</h3>
-        <form class="contact-form">
-        	<div>
-            	<label for="nadawca">Nadawca:</label>
-            	<input type="text" name="nadawca" />
-                <p class="form-warning">Nie wypełniono nadawcy</p>
+    	<p class="contact-success"><h:outputText value="#{contactBean.successResponse}" id="successResponse" /></p>
+    	<h:form  class="contact-form">
+    		<div>
+    			<h:outputLabel for="nadawca" value="Nadawca:" />
+    			<h:inputText id="nadawca" value="#{contactBean.senderName}" required="true" />
+                <p class="form-warning"><h:message for="nadawca" id="nameError" /></p>
             </div>
             <div>
-            	<label for="email">Twój email:</label>
-            	<input type="text" name="email" />
-                <p class="form-warning">Niepoprawnie wypełnione pole z Twoim mailem</p>
+            	<h:outputLabel for="email" value="Twój email:" />
+    			<h:inputText id="email" value="#{contactBean.senderEmail}" required="true" />
+                <p class="form-warning"><h:message for="email" id="mailError"/></p>
             </div>
             <div>
-            	<label for="tresc">Treść:</label>
-                <textarea></textarea>
+            	<h:outputLabel for="tresc" value="Treść:" />
+    			<h:inputTextarea id="tresc" value="#{contactBean.message}" required="true"></h:inputTextarea>
+                <p class="form-warning"><h:message for="tresc" id="contentError"/></p>
             </div>
-            <input type="submit" value="Wyślij" class="button contact-button" />
-        </form>
+           	<h:commandButton value="Wyślij" class="button contact-button" action="#{contactBean.sendMessage}">
+           		<f:ajax execute="@form" render="@all" />
+           	</h:commandButton>
+    	</h:form>
     </div>
 </div>
 

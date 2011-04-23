@@ -3,9 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-  
-   	<bean id="employeeDao" 
-         class="pl.edu.uj.kognitywistyka.aboutproject.dao.EmployeeDaoImpl" >
+ 
+   	<bean id="contactRecipientDao" 
+         class="pl.edu.uj.kognitywistyka.contact.dao.ContactRecipientDaoImpl" >
    		<property name="sessionFactory" ref="sessionFactory" />
    	</bean>
  
