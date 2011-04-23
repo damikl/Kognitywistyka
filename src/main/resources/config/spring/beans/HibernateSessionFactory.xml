@@ -15,7 +15,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
 			</props>
 		</property>
 
@@ -29,6 +29,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				<value>xml/news/hibernate/News.hbm.xml</value>
 				<value>xml/gallery/hibernate/Gallery.hbm.xml</value>
 				<value>xml/gallery/hibernate/Photo.hbm.xml</value>
+				<value>xml/contact/hibernate/ContactRecipient.hbm.xml</value>
 			</list>
 		</property>
 

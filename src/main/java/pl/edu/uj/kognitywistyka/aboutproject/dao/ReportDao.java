@@ -6,4 +6,5 @@ import pl.edu.uj.kognitywistyka.aboutproject.model.Report;
 
 public interface ReportDao {
 	List<Report> findAllReports();
+	Report getReport(long id);
 }

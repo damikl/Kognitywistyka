@@ -1,7 +1,5 @@
 package pl.edu.uj.kognitywistyka.contact.bo;
 
-import java.util.List;
-
 import javax.mail.MessagingException;
 
 import pl.edu.uj.kognitywistyka.contact.dao.ContactRecipientDao;
