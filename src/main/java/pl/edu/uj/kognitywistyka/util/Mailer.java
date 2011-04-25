@@ -97,7 +97,7 @@ public class Mailer {
 		message.setRecipients(Message.RecipientType.BCC, addressesTo);
 
 		message.setSubject(subject);
-		message.setContent(content, "text/plain");
+		message.setContent(content, "text/html; charset=UTF-8");
 
 		Transport.send(message);
 	}
@@ -107,6 +107,7 @@ public class Mailer {
 		for (String recipient : recipients) {
 			addresses.add(new InternetAddress(recipient));
 		}
-		return (InternetAddress[]) addresses.toArray();
+		
+		return addresses.toArray(new InternetAddress[addresses.size()]);
 	}
 }

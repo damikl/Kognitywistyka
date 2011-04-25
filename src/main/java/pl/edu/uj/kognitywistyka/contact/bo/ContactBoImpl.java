@@ -1,8 +1,12 @@
 package pl.edu.uj.kognitywistyka.contact.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.mail.MessagingException;
 
 import pl.edu.uj.kognitywistyka.contact.dao.ContactRecipientDao;
+import pl.edu.uj.kognitywistyka.contact.model.ContactRecipient;
 import pl.edu.uj.kognitywistyka.util.Mailer;
 
 public class ContactBoImpl implements ContactBo {
@@ -13,24 +17,30 @@ public class ContactBoImpl implements ContactBo {
 		this.contactRecipientDao = contactRecipientDao;
 	}
 	
-	public void sendMessage(String from, String subject, String content) {
-		//TODO: Odkomentować i usunąć to co jest aktualnie kiedy Ładan zrobi DAO
+	public void sendMessage(String from, String subject, String content) {		
+		List<String> recipientList = getRecipientList();
+		String[] recipients = new String[recipientList.size()];
+		recipients = recipientList.toArray(recipients);
 		
-//		List<String> recipientsList = contactRecipientDao.findAllRecipients();
-//		String[] recipients = (String[]) recipientsList.toArray();
-//		
-//		Mailer mailer = new Mailer(subject, content, from, recipients);
-//		try {
-//			mailer.send();
-//		} catch (MessagingException e) {
-//			e.printStackTrace();
-//		}
-		
+		Mailer mailer = new Mailer(subject, content, from, recipients);
 		try {
-			Mailer.sendTestMail("froger.mcs@gmail.com", true);
+			mailer.send();
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private List<String> getRecipientList() {
+		List<ContactRecipient> contactRecipientsList = contactRecipientDao.findAllContactRecipients();
+		List<String> recipientList = new ArrayList<String>();
+		for (ContactRecipient contactRecipient : contactRecipientsList) {
+			//Format: "FirstName LastName <email@address.com>"
+			recipientList.add(contactRecipient.getFirstName() + " " +
+							  contactRecipient.getLastName() + " <" +
+							  contactRecipient.getEmail() + ">");
+		}
+		
+		return recipientList;
 	}
 
 }
