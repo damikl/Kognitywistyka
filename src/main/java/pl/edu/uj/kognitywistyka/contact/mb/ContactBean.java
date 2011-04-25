@@ -5,10 +5,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.mail.MessagingException;
 
 import pl.edu.uj.kognitywistyka.contact.bo.ContactBo;
-import pl.edu.uj.kognitywistyka.util.Mailer;
 
 @ManagedBean
 @RequestScoped

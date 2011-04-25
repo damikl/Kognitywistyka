@@ -16,6 +16,9 @@ public class ReportDaoImpl extends HibernateDaoSupport
 		return getHibernateTemplate().find("from Report order by date desc");
 	}
 	
+	public Report getReport(long id) {
+		return (Report) getHibernateTemplate().get(Report.class, id);
+	}
 
 
 }
