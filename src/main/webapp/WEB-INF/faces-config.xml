@@ -13,4 +13,8 @@
 			<var>msgs</var>
 		</resource-bundle>
 	</application>
+	<validator>
+		<validator-id>pl.edu.uj.kognitywistyka.email</validator-id>
+		<validator-class>pl.edu.uj.kognitywistyka.util.EmailValidator</validator-class>
+	</validator>
 </faces-config>
