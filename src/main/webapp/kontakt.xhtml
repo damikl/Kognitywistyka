@@ -39,7 +39,9 @@
             </div>
             <div>
             	<h:outputLabel for="email" value="Twój email:" />
-    			<h:inputText id="email" value="#{contactBean.senderEmail}" required="true" />
+    			<h:inputText id="email" value="#{contactBean.senderEmail}" required="true">
+    				<f:validator validatorId="pl.edu.uj.kognitywistyka.email"/>
+    			</h:inputText>
                 <p class="form-warning"><h:message for="email" id="mailError"/></p>
             </div>
             <div>
