@@ -16,16 +16,14 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Mailer {
-	//TODO: Przenieść do config.properties projektu
-	private static final String SMTP_HOST_NAME = "sv12.vipserv.org";
-	private static final String SMTP_AUTH_USER = "test@mstanek.vipserv.org";
-	private static final String SMTP_AUTH_PASS = "Warsztaty!@";
 
 	private static class SMTPAuthenticator extends Authenticator {
 		@Override
 		protected PasswordAuthentication getPasswordAuthentication() {
-			String user = SMTP_AUTH_USER;
-			String pass = SMTP_AUTH_PASS;
+			String user = PropertiesReader
+					.getPropertyOfMailer("SMTP_AUTH_USER");
+			String pass = PropertiesReader
+					.getPropertyOfMailer("SMTP_AUTH_PASS");
 			return new PasswordAuthentication(user, pass);
 		}
 	}
@@ -47,32 +45,37 @@ public class Mailer {
 		init();
 	}
 
-	public static void sendTestMail(String testRecipient, boolean showDebugInfos) throws MessagingException {
+	public static void sendTestMail(String testRecipient, boolean showDebugInfos)
+			throws MessagingException {
 		Properties props = new Properties();
-		props.put("mail.smtp.host", SMTP_HOST_NAME);
+		props.put("mail.smtp.host",
+				PropertiesReader.getPropertyOfMailer("SMTP_HOST_NAME"));
 		props.put("mail.smtp.auth", "true");
-		
+
 		Authenticator authenticator = new SMTPAuthenticator();
 		Session session = Session.getDefaultInstance(props, authenticator);
 		session.setDebug(showDebugInfos);
-		
+
 		Message message = new MimeMessage(session);
-		
-		InternetAddress addressFrom = new InternetAddress("Mailer Test <mailer@kognitywistyka.uj.pl>");
+
+		InternetAddress addressFrom = new InternetAddress(
+				"Mailer Test <mailer@kognitywistyka.uj.pl>");
 		InternetAddress addressTo = new InternetAddress(testRecipient);
 
 		message.setFrom(addressFrom);
 		message.setRecipient(Message.RecipientType.BCC, addressTo);
 
 		message.setSubject("Test message");
-		message.setContent("This is test message, sent from Mailer class", "text/plain");
+		message.setContent("This is test message, sent from Mailer class",
+				"text/plain");
 
 		Transport.send(message);
 	}
-	
+
 	private void init() {
 		Properties props = new Properties();
-		props.put("mail.smtp.host", SMTP_HOST_NAME);
+		props.put("mail.smtp.host",
+				PropertiesReader.getPropertyOfMailer("SMTP_HOST_NAME"));
 		props.put("mail.smtp.auth", "true");
 
 		Authenticator authenticator = new SMTPAuthenticator();
@@ -81,7 +84,8 @@ public class Mailer {
 		message = new MimeMessage(session);
 	}
 
-	public void sendWithAdditionalInfos(String addSubject, String beforeContent, String afterContent)
+	public void sendWithAdditionalInfos(String addSubject,
+			String beforeContent, String afterContent)
 			throws MessagingException {
 		subject = addSubject + " " + subject;
 		content = beforeContent + " " + content + " " + afterContent;
@@ -107,7 +111,7 @@ public class Mailer {
 		for (String recipient : recipients) {
 			addresses.add(new InternetAddress(recipient));
 		}
-		
+
 		return addresses.toArray(new InternetAddress[addresses.size()]);
 	}
 }
