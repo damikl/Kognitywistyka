@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets"
-		  xmlns:h="http://java.sun.com/jsf/html">
+		  xmlns:ui="http://java.sun.com/jsf/facelets">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -11,22 +10,16 @@
 <ui:composition template="/templates/masterLayout.xhtml">
 <!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
 <!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
-	<ui:param name="bodyClass" value="aktualnosci" />
-<!-- Tu podajemy która pozycja submenu ma być zaznaczona -->
-	<ui:param name="submenuChecked" value="submenu-checked1" />
-	
+	<ui:param name="bodyClass" value="glowna" />
+	<ui:define name="siteHeader">
+		<ui:include src="/templates/sections/logged/header.xhtml" />
+	</ui:define>
 <!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
 	<ui:define name="siteContent">
 	
 <div id="site-wrapper">
-	<p id="site-navigation">
-		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
-		Aktualności
-	</p>
-	
-	<ui:include src="/templates/sections/sidebars/aktualnosci.xhtml" />
-	
-    <h3 class="aktualnosci-header">Aktualności</h3>
+	<div id="content">
+    	<h3>Aktualności</h3>
         <article class="index-article">
         	<header>
             	<h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
@@ -34,7 +27,6 @@
             </header>
             <section>
             	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
             </section>
         </article>
         <article class="index-article">
@@ -44,7 +36,6 @@
             </header>
             <section>
             	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
             </section>
         </article>
         <article class="index-article">
@@ -54,7 +45,6 @@
             </header>
             <section>
             	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
             </section>
         </article>
         <article class="index-article">
@@ -64,10 +54,36 @@
             </header>
             <section>
             	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
             </section>
         </article>
         <p class="link-right"><a href="#" class="link3 link-more">Zobacz pozostałe wiadomości</a></p>
+    </div>
+    <aside class="index-sidebar">
+    	<div class="index-sidebar-box">
+        	<h3>Analizy</h3>
+            <p>Zbiór dokumentów z internetu związanych z kognitywistyką</p>
+            <ul class="pdf-list">
+            	<li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+            </ul>
+            <p class="link-right"><a href="#" class="link3 link-more">Więcej dokumentów</a></p>
+        </div>
+        <div class="index-sidebar-box last-index-sidebar-box">
+        	<h3>Raporty</h3>
+            <p>Zbiór dokumentów z internetu związanych z kognitywistyką</p>
+            <ul class="pdf-list">
+            	<li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+                <li><a href="#" class="link1">Nazwa dokumentu</a></li>
+            </ul>
+            <p class="link-right"><a href="#" class="link3 link-more">Więcej raportów</a></p>
+        </div>
+    </aside>
 </div>
 
 	</ui:define>
