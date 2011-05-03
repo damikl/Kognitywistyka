@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class PropertiesReader {
 	private static String pathToConfig = "/config/webapp/";
+	private static String nameOfGenProp = "general.properties";
 	private static String nameOfMailerProp = "mailer.properies";
 
 	private static Properties init(String file) {
@@ -25,6 +26,10 @@ public class PropertiesReader {
 
 		return null;
 
+	}
+
+	public static String getPathToStoreFile() {
+		return init(nameOfGenProp).getProperty("pathToStoreFile");
 	}
 
 	public static String getPropertyOfMailer(String property) {
