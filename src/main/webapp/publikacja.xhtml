@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="przedsiebiorca" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+	<ui:define name="siteContent">
+
+<div id="site-wrapper">
+	<p id="site-navigation">
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt;
+		<h:link value="Jestem przedsiębiorcą" outcome="przedsiebiorca" class="link1" />  &gt;
+		<h:link value="Publikacje" outcome="publikacje" class="link1" />  &gt;
+		Tytuł publikacji
+	</p>
+	
+	<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
+	
+    <div id="content2">
+    	<h3>Tytuł publikacji</h3>
+    
+    	<h4>Jan Kowalski</h4>
+    	<p class="data">14 czerwca 2010</p>
+    	
+    	<br />
+		<h4>Opis:</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nulla felis. In
+		lobortis ligula eu urna tristique luctus. Pellentesque tristique, sapien eu mattis
+		bibendum, velit leo lobortis sem, ac facilisis sapien justo sed elit. Maecenas nec
+		nisl non velit luctus convallis. Suspendisse vel dapibus nunc. Vivamus sed enim at nulla
+		scelerisque luctus ut ut leo. Etiam tincidunt, magna id elementum convallis, ante nulla
+		ultrices enim, eget tempor nibh felis non mi.</p>
+		
+		<p class="link-right"><a href="#" class="link1">Pobierz</a></p>
+    </div>
+</div>
+
+	</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>
