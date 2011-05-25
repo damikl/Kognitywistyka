@@ -15,8 +15,8 @@
 	<div id="head-wrapper">
         <h1><h:link value="Kognitywistyka FORESIGHT" outcome="index" /></h1>
         <div id="login-user-panel">
-            <p><a href="#" class="button">Twoje konto</a> <a href="#" class="button">Schowek</a> <h:link value="Wyloguj" outcome="index" class="link2" /></p>
-            <p class="link-right">Zalogowany <a href="#" class="link2">Jan kowalski</a></p>
+            <p><a href="#" class="button">Twoje konto</a> <a href="#" class="button">Schowek</a>  <h:form> <h:commandButton action="#{userBean.logout}" value="logout" />  </h:form></p>
+            <p class="link-right">Zalogowany <a href="#" class="link2">#{userBean.user.userName}</a></p>
         </div>
         <nav id="main-nav">
             <ul>
