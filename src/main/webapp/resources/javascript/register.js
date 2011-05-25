@@ -1,10 +1,10 @@
 pickBusinessman = function() {
-	$("#firma").text("Firma:");
-	$("#stanowisko").text("Stanowisko:");
+	$("#company").text("Firma:");
+	$("#position").text("Stanowisko:");
 };
 
 pickScientist = function() {
-	$("#firma").text("Uczelnia:");
-	$("#stanowisko").text("Tytuł naukowy:");
+	$("#company").text("Uczelnia:");
+	$("#position").text("Tytuł naukowy:");
 };
 

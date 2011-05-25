@@ -2,9 +2,16 @@ package pl.edu.uj.kognitywistyka.user.mb;
 
 import java.io.Serializable;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
+
+import pl.edu.uj.kognitywistyka.user.bo.RegistrationBo;
 import pl.edu.uj.kognitywistyka.user.model.Businessman;
 import pl.edu.uj.kognitywistyka.user.model.Scientist;
 
+@ManagedBean
+@RequestScoped
 public class Registration implements Serializable{
 
 	/**
@@ -15,15 +22,22 @@ public class Registration implements Serializable{
 	private String role;
 	private String firstName;
 	private String lastName;
+	private String city;
 	private String company;
 	private String description;
 	private String position;
-	private String state;
-	private String companyCategory;
+	private String region;
+	private String[] companyCategory;
 	private String password;
 	private String passConfirm;
 	
+	@ManagedProperty(name = "registrationBo", value = "#{registrationBo}")
+	RegistrationBo registrationBo;
 
+	public void setRegistrationBo(RegistrationBo registrationBo) {
+		this.registrationBo = registrationBo;
+	}
+	
 	public String getRole() {
 		return role;
 	}
@@ -46,6 +60,14 @@ public class Registration implements Serializable{
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCity() {
+		return city;
 	}
 
 	public String getCompany() {
@@ -72,16 +94,6 @@ public class Registration implements Serializable{
 		this.position = position;
 	}
 	
-	public String getState()
-	{
-		return state;
-	}
-	
-	public void setState(String state)
-	{
-		this.state = state;
-	}
-	
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -98,12 +110,12 @@ public class Registration implements Serializable{
 		return passConfirm;
 	}
 	
-	public String getCompanyCategory()
+	public String[] getCompanyCategory()
 	{
 		return companyCategory;
 	}
 	
-	public void setCompanyCategory(String companyCategory)
+	public void setCompanyCategory(String[] companyCategory)
 	{
 		this.companyCategory = companyCategory;
 	}
@@ -115,7 +127,7 @@ public class Registration implements Serializable{
 			Businessman registered = new Businessman();
 			registered.setFirstName(firstName);
 			registered.setLastName(lastName);
-			registered.setState(state);
+			registered.setRegion(region);
 			registered.setCompany(company);
 			registered.setCompanyCategory(companyCategory);
 			
@@ -123,13 +135,14 @@ public class Registration implements Serializable{
 			{
 				registered.setPass(password);
 			}
+			registrationBo.register(registered);
 		}
 		if(role == "Scientist")
 		{
 			Scientist registered = new Scientist();
 			registered.setFirstName(firstName);
 			registered.setLastName(lastName);
-			registered.setState(state);
+			registered.setRegion(region);
 			registered.setUniversity(company);
 			registered.setTitle(position);
 			
@@ -137,6 +150,7 @@ public class Registration implements Serializable{
 			{
 				registered.setPass(password);
 			}
+			registrationBo.register(registered);
 			
 		}
 		resetView();
@@ -146,10 +160,18 @@ public class Registration implements Serializable{
 		setDescription("");
 		setFirstName("");
 		setLastName("");
-		setState("");
+		setRegion("");
 		setCompany("");
-		setCompanyCategory("");
+		setCompanyCategory(null);
 		
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getRegion() {
+		return region;
 	}
 
 }

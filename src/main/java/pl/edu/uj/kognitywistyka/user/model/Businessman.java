@@ -1,16 +1,23 @@
 package pl.edu.uj.kognitywistyka.user.model;
 
+import java.io.Serializable;
 
-public class Businessman {
+
+public class Businessman implements Serializable{
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -552442872820743137L;
+	
 	private long userId;
 	private String firstName;
 	private String lastName;
 	private String company;
 	private String description;
 	private String position;
-	private String state;
-	private String companyCategory;
+	private String region;
+	private String[] companyCategory;
 	private String pass;
 	
 
@@ -62,22 +69,12 @@ public class Businessman {
 		this.position = position;
 	}
 	
-	public String getState()
-	{
-		return state;
-	}
-	
-	public void setState(String state)
-	{
-		this.state = state;
-	}
-	
-	public String getCompanyCategory()
+	public String[] getCompanyCategory()
 	{
 		return companyCategory;
 	}
 	
-	public void setCompanyCategory(String companyCategory)
+	public void setCompanyCategory(String[] companyCategory)
 	{
 		this.companyCategory = companyCategory;
 	}
@@ -88,6 +85,14 @@ public class Businessman {
 
 	public String getPass() {
 		return pass;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getRegion() {
+		return region;
 	}
 
 }
