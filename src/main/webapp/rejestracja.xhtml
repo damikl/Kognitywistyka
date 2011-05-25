@@ -1,103 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
-<head><title>IGNORED!</title></head>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>IGNORED!</title>
+</head>
 <body>
-<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
-<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+	<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+	<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
 
-<ui:composition template="/templates/masterLayout.xhtml">
-<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
-<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
-	<ui:param name="bodyClass" value="kontakt" />
-	
-<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
-	<ui:define name="siteContent">
+	<ui:composition template="/templates/masterLayout.xhtml">
+		<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+		<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+		<ui:param name="bodyClass" value="kontakt" />
 
-<div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Rejestracja</p>
-	<aside class="sidebar2">
-    	<ul class="submenu1">
-        	<li class="submenu-checked"><a href="#">Lorem ipsum</a></li>
-        </ul>
-    </aside>
-    <div id="content2">
-    	<h3>Rejestracja</h3>
-    	<h4 style="margin: 10px 0">Masz już konto? <a href="#" class="link1">Zaloguj się</a></h4>
-        <form class="account-form">
-        	<div style="height: 50px;">
-            	<label for="jestem">Jestem:</label>
-                <p><input type="radio" name="jestem" value="przedsiębiorcą" onclick="pickBusinessman()" />przedsiębiorcą</p>
-                <p><input type="radio" name="jestem" value="naukowcem" onclick="pickScientist()" /> naukowcem</p>
-            </div>
-        	<div>
-            	<label for="imie">Imię:</label>
-            	<input type="text" name="imie" class="account-text" />
-                <p class="form-warning">Warning?</p>
-            </div>
-            <div>
-            	<label for="nazwisko">Nazwisko:</label>
-            	<input type="text" name="nazwisko" class="account-text" />
-            </div>
-            <div>
-            	<label for="firma" id="firma">Firma:</label>
-            	<input type="text" name="firma" class="account-text" />
-            </div>
-            <div>
-            	<label for="stanowisko" id="stanowisko">Stanowisko:</label>
-            	<input type="text" name="stanowisko" class="account-text" />
-            </div>
-            <div>
-            	<label for="miejscowosc">Miejscowość:</label>
-            	<input type="text" name="miejscowosc" class="account-text" />
-            </div>
-            <div>
-            	<label for="wojewodztwo">Województwo:</label>
-            	<select name="wojewodztwo">
-					<option value="woj1">wojewodztwo1</option>
-					<option value="woj2">wojewodztwo2</option>
-					<option value="woj3">wojewodztwo3</option>
-				</select>
-            </div>
-            <div class="account-checkboxes">
-            	<label for="branza[]">Branża:</label>
-                <input type="checkbox" name="branza[]" value="reklama" />
-                <p>Reklama</p>
-                <input type="checkbox" name="branza[]" value="hr" />
-                <p>HR</p>
-                <input type="checkbox" name="branza[]" value="internet" />
-                <p>Internet</p>
-                <input type="checkbox" name="branza[]" value="kategoria1" />
-                <p>Kategoria</p>
-                <input type="checkbox" name="branza[]" value="kategoria2" />
-                <p>Kategoria</p>
-                <input type="checkbox" name="branza[]" value="kategoria3" />
-                <p>Kategoria</p>
-            </div>
-            <div>
-            	<label for="tresc">Opis firmy:</label>
-                <textarea></textarea>
-            </div>
-            <div>
-            	<label for="noweHaslo">Zmiana hasła:</label>
-            	<input type="text" name="nowe-haslo" class="account-text" />
-            </div>
-            <div>
-            	<label for="potwierdzenieHasla">Potwierdzenie hasła:</label>
-            	<input type="text" name="haslo-potwierdznie" class="account-text" />
-            </div>
-            <input type="submit" value="Rejestruj" class="button account-button" />
-        </form>
-    </div>
-</div>
+		<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+		<ui:define name="siteContent">
 
-	</ui:define>
-</ui:composition>
+			<div id="site-wrapper">
+				<p id="site-navigation">
+					<a href="#" class="link1">Strona główna</a> &gt; Rejestracja
+				</p>
+				<aside class="sidebar2">
+					<ul class="submenu1">
+						<li class="submenu-checked"><a href="#">Lorem ipsum</a>
+						</li>
+					</ul>
+				</aside>
+				<div id="content2">
+					<h3>Rejestracja</h3>
+					<h4 style="margin: 10px 0">
+						Masz już konto? <a href="#" class="link1">Zaloguj się</a>
+					</h4>
+					<!--         <form class="account-form"> -->
+					<!--         	<div style="height: 50px;"> -->
+					<!--             	<label for="jestem">Jestem:</label> -->
+					<!--                 <p><input type="radio" name="jestem" value="przedsiębiorcą" onclick="pickBusinessman()" />przedsiębiorcą</p> -->
+					<!--                 <p><input type="radio" name="jestem" value="naukowcem" onclick="pickScientist()" /> naukowcem</p> -->
+					<!--             </div> -->
+					<!--         	<div> -->
+					<!--             	<label for="imie">Imię:</label> -->
+					<!--             	<input type="text" name="imie" class="account-text" /> -->
+					<!--                 <p class="form-warning">Warning?</p> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="nazwisko">Nazwisko:</label> -->
+					<!--             	<input type="text" name="nazwisko" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="firma" id="firma">Firma:</label> -->
+					<!--             	<input type="text" name="firma" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="stanowisko" id="stanowisko">Stanowisko:</label> -->
+					<!--             	<input type="text" name="stanowisko" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="miejscowosc">Miejscowość:</label> -->
+					<!--             	<input type="text" name="miejscowosc" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="wojewodztwo">Województwo:</label> -->
+					<!--             	<select name="wojewodztwo"> -->
+					<!-- 					<option value="woj1">wojewodztwo1</option> -->
+					<!-- 					<option value="woj2">wojewodztwo2</option> -->
+					<!-- 					<option value="woj3">wojewodztwo3</option> -->
+					<!-- 				</select> -->
+					<!--             </div> -->
+					<!--             <div class="account-checkboxes"> -->
+					<!--             	<label for="branza[]">Branża:</label> -->
+					<!--                 <input type="checkbox" name="branza[]" value="reklama" /> -->
+					<!--                 <p>Reklama</p> -->
+					<!--                 <input type="checkbox" name="branza[]" value="hr" /> -->
+					<!--                 <p>HR</p> -->
+					<!--                 <input type="checkbox" name="branza[]" value="internet" /> -->
+					<!--                 <p>Internet</p> -->
+					<!--                 <input type="checkbox" name="branza[]" value="kategoria1" /> -->
+					<!--                 <p>Kategoria</p> -->
+					<!--                 <input type="checkbox" name="branza[]" value="kategoria2" /> -->
+					<!--                 <p>Kategoria</p> -->
+					<!--                 <input type="checkbox" name="branza[]" value="kategoria3" /> -->
+					<!--                 <p>Kategoria</p> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="tresc">Opis firmy:</label> -->
+					<!--                 <textarea></textarea> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="noweHaslo">Zmiana hasła:</label> -->
+					<!--             	<input type="text" name="nowe-haslo" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <div> -->
+					<!--             	<label for="potwierdzenieHasla">Potwierdzenie hasła:</label> -->
+					<!--             	<input type="text" name="haslo-potwierdznie" class="account-text" /> -->
+					<!--             </div> -->
+					<!--             <input type="submit" value="Rejestruj" class="button account-button" /> -->
+					<!--         </form> -->
+					<h:form id="registerform" onsubmit="return validate()">
+						<table>
+							<tr>
+								<td>Jestem :</td>
+								<td>
+									<h:selectOneRadio value="#{registrationBean.profession}">
+										<f:selectItem itemValue="scientist" itemLabel="naukowcem" />
+   										<f:selectItem itemValue="businessman" itemLabel="przedsiębiorcą" />
+									</h:selectOneRadio>
+								</td>
+							</tr>
+							<tr>
+								<td>Nazwa użytkownika :</td>
+								<td><h:inputText id="uname"
+										value="#{registrationBean.userName}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Hasło :</td>
+								<td><h:inputSecret id="pwd"
+										value="#{registrationBean.password}"></h:inputSecret>
+								</td>
+							</tr>
+							<tr>
+								<td>Imie :</td>
+								<td><h:inputText id="firstName"
+										value="#{registrationBean.firstName}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Nazwisko :</td>
+								<td><h:inputText id="lastName"
+										value="#{registrationBean.lastName}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Email :</td>
+								<td><h:inputText id="email"
+										value="#{registrationBean.email}"></h:inputText>
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<td>Miejsce pracy  :</td>
+								<td><h:inputText id="companyName"
+										value="#{registrationBean.companyName}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Stanowisko :</td>
+								<td><h:inputText id="positionInCompany"
+										value="#{registrationBean.positionInCompany}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Branże :</td>
+								<h:selectManyCheckbox id="trades" value="#{registrationBean.tradesChosen}">
+  									<f:selectItems value="#{registrationBean.tradeNamesList}"/>
+								</h:selectManyCheckbox>
+							</tr>
+							<tr>
+								<td>Miasto :</td>
+								<td><h:inputText id="city"
+										value="#{registrationBean.city}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Województwo :</td>
+								<td><h:inputText id="region"
+										value="#{registrationBean.region}"></h:inputText>
+								</td>
+							</tr>
+							<tr>
+								<td>Opis miejsca pracy :</td>
+								<td><h:inputTextarea id="companyDescription"
+										value="#{registrationBean.companyDescription}"></h:inputTextarea>
+								</td>
+							</tr>
+						</table>
+						<p />
+						<h:commandButton id="registerButton"
+							action="#{registrationBean.register}" value="Register" />
+						<br />
+						<h:message for="registerButton" errorStyle="color: red" />
 
-<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
-<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+					</h:form>
+
+				</div>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+
+	<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+	<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
 </body>
 </html>
