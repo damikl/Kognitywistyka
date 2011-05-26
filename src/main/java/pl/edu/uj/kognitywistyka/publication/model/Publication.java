@@ -9,11 +9,12 @@ public class Publication implements Serializable{
 	private static final long serialVersionUID = -2954967692725423866L;
 	private long publicationId;
 	private String title;
+	private String authorFirstName;
+	private String authorLastName;
 	private Date date;
 	private String description;
 	private String fileName;
 	private SimpleDateFormat shortDateFormatter = new SimpleDateFormat("dd-MM-yyyy");
-	
 	
 	public void setPublicationId(long publicationId) {
 		this.publicationId = publicationId;
@@ -26,6 +27,18 @@ public class Publication implements Serializable{
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getAuthorFirstName() {
+		return authorFirstName;
+	}
+	public void setAuthorFirstName(String authorFirstName) {
+		this.authorFirstName = authorFirstName;
+	}
+	public String getAuthorLastName() {
+		return authorLastName;
+	}
+	public void setAuthorLastName(String authorLastName) {
+		this.authorLastName = authorLastName;
 	}
 	public Date getDate() {
 		return date;
@@ -45,11 +58,7 @@ public class Publication implements Serializable{
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
 	public String getShortDate() {
 		return shortDateFormatter.format(date);
-	}
-	
-
-	
+	}	
 }

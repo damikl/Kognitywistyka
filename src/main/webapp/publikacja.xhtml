@@ -27,21 +27,18 @@
 	<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
 	
     <div id="content2">
-    	<h3>Tytuł publikacji</h3>
+    	<h3>#{publicationBean.dataItem.title}</h3>
     
-    	<h4>Jan Kowalski</h4>
-    	<p class="data">14 czerwca 2010</p>
+    	<h4>#{publicationBean.dataItem.authorFirstName} #{publicationBean.dataItem.authorLastName}</h4>
+    	<p class="data">#{publicationBean.dataItem.shortDate}</p>
     	
     	<br />
 		<h4>Opis:</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nulla felis. In
-		lobortis ligula eu urna tristique luctus. Pellentesque tristique, sapien eu mattis
-		bibendum, velit leo lobortis sem, ac facilisis sapien justo sed elit. Maecenas nec
-		nisl non velit luctus convallis. Suspendisse vel dapibus nunc. Vivamus sed enim at nulla
-		scelerisque luctus ut ut leo. Etiam tincidunt, magna id elementum convallis, ante nulla
-		ultrices enim, eget tempor nibh felis non mi.</p>
+		<p>#{publicationBean.dataItem.description}</p>
 		
-		<p class="link-right"><a href="#" class="link1">Pobierz</a></p>
+		<p class="link-right">
+			<a href="#{publicationBean.dataItem.fileName}" class="link1">Pobierz</a>
+		</p>
     </div>
 </div>
 

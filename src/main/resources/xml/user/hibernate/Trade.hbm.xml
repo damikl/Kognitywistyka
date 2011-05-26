@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pl.edu.uj.kognitywistyka.user.model.Trade" table="k_trade">
+		<id name="tradeId" column="tradeId" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="tradeName" type="java.lang.String">
+			<column name="tradeName" not-null="true" length="20"/>
+		</property>
+		 <set name="users" table="user_trade" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tradeId" not-null="true" />
+            </key>
+            <many-to-many entity-name="pl.edu.uj.kognitywistyka.user.model.User">
+                <column name="userId" not-null="true" />
+            </many-to-many>
+        </set>
+		
+   </class>
+</hibernate-mapping>
