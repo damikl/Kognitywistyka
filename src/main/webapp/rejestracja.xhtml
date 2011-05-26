@@ -27,84 +27,70 @@
     <div id="content2">
     	<h3>Rejestracja</h3>
     	<h4 style="margin: 10px 0">Masz już konto? <a href="#" class="link1">Zaloguj się</a></h4>
-        <h:form class="account-form">
+        <form class="account-form">
         	<div style="height: 50px;">
             	<label for="jestem">Jestem:</label>
                 <p><input type="radio" name="jestem" value="przedsiębiorcą" onclick="pickBusinessman()" />przedsiębiorcą</p>
                 <p><input type="radio" name="jestem" value="naukowcem" onclick="pickScientist()" /> naukowcem</p>
             </div>
         	<div>
-            	<label for="firstName">Imię:</label>
-            	<h:inputText id="firstName" value="#{registration.firstName}" required="true" class="account-text">
-                </h:inputText>
-                <p class="form-warning"><h:message for="firstName" /></p>
+            	<label for="imie">Imię:</label>
+            	<input type="text" name="imie" class="account-text" />
+                <p class="form-warning">Warning?</p>
             </div>
             <div>
-            	<label for="lastName">Nazwisko:</label>
-            	<h:inputText id="lastName" value="#{registration.lastName}" required="true" class="account-text">	
-                </h:inputText>
-                <p class="form-warning"><h:message for="lastName" /></p>
+            	<label for="nazwisko">Nazwisko:</label>
+            	<input type="text" name="nazwisko" class="account-text" />
             </div>
             <div>
-            	<label for="company" id="company">Firma:</label>
-            	<h:inputText id="company" value="#{registration.company}" required="true" class="account-text">
-                </h:inputText>
-                <p class="form-warning"><h:message for="company" /></p>
+            	<label for="firma" id="firma">Firma:</label>
+            	<input type="text" name="firma" class="account-text" />
             </div>
             <div>
-            	<label for="position" id="position">Stanowisko:</label>
-            	<h:inputText id="position" value="#{registration.position}" required="true" class="account-text">
-                </h:inputText>
-                <p class="form-warning"><h:message for="position" /></p>
+            	<label for="stanowisko" id="stanowisko">Stanowisko:</label>
+            	<input type="text" name="stanowisko" class="account-text" />
             </div>
             <div>
-            	<label for="city">Miejscowość:</label>
-            	<h:inputText id="city" value="#{registration.city}" required="true" class="account-text">
-                </h:inputText>
-                <p class="form-warning"><h:message for="city" /></p>
+            	<label for="miejscowosc">Miejscowość:</label>
+            	<input type="text" name="miejscowosc" class="account-text" />
             </div>
             <div>
-            	<label for="region">Województwo:</label>
-				 <h:selectOneMenu id="region" value="#{registration.region}">
-                	<f:selectItem itemValue="1" itemLabel="Śląskie"/>
-                	<f:selectItem itemValue="2" itemLabel="Małopolskie"/>
-                	<f:selectItem itemValue="3" itemLabel="Podkarpackie"/>
-                </h:selectOneMenu>
-                <p class="form-warning"><h:message for="region" /></p>
+            	<label for="wojewodztwo">Województwo:</label>
+            	<select name="wojewodztwo">
+					<option value="woj1">wojewodztwo1</option>
+					<option value="woj2">wojewodztwo2</option>
+					<option value="woj3">wojewodztwo3</option>
+				</select>
             </div>
             <div class="account-checkboxes">
-            	<label for="category">Branża:</label>
-               	<h:selectManyCheckbox id="category" value="#{registration.companyCategory}" layout="pageDirection" required="true">
-               		<f:selectItem itemValue="reklama" itemLabel="reklama"/>
-               		<f:selectItem itemValue="hr" itemLabel="hr"/>
-               		<f:selectItem itemValue="internet" itemLabel="internet"/>
-               		<f:selectItem itemValue="kat0" itemLabel="kat0"/>
-               		<f:selectItem itemValue="kat1" itemLabel="kat1"/>
-               		<f:selectItem itemValue="kat2" itemLabel="kat2"/>
-               		<f:selectItem itemValue="kat3" itemLabel="kat3"/>
-           		</h:selectManyCheckbox>
-           		<p class="form-warning"><h:message for="category" /></p>
+            	<label for="branza[]">Branża:</label>
+                <input type="checkbox" name="branza[]" value="reklama" />
+                <p>Reklama</p>
+                <input type="checkbox" name="branza[]" value="hr" />
+                <p>HR</p>
+                <input type="checkbox" name="branza[]" value="internet" />
+                <p>Internet</p>
+                <input type="checkbox" name="branza[]" value="kategoria1" />
+                <p>Kategoria</p>
+                <input type="checkbox" name="branza[]" value="kategoria2" />
+                <p>Kategoria</p>
+                <input type="checkbox" name="branza[]" value="kategoria3" />
+                <p>Kategoria</p>
             </div>
             <div>
-            	<label for="description">Opis firmy:</label>
-                <h:inputTextarea id="description" value="#{registration.description}" rows="10">
-                </h:inputTextarea>
-                <p class="form-warning"><h:message for="description" /></p>
+            	<label for="tresc">Opis firmy:</label>
+                <textarea></textarea>
             </div>
             <div>
-            	<label for="password">Zmiana hasła:</label>
-            	<h:inputSecret id="password" value="#{registration.password}" required="true" class="account-text">
-                </h:inputSecret>
-                <p class="form-warning"><h:message for="password" /></p>
+            	<label for="noweHaslo">Zmiana hasła:</label>
+            	<input type="text" name="nowe-haslo" class="account-text" />
             </div>
             <div>
-            	<label for="passConfirm">Potwierdzenie hasła:</label>
-            	<h:inputSecret id="passConfirm" value="#{registration.passConfirm}" required="true" class="account-text">
-                </h:inputSecret>
-                <p class="form-warning"><h:message for="passConfirm" /></p>
+            	<label for="potwierdzenieHasla">Potwierdzenie hasła:</label>
+            	<input type="text" name="haslo-potwierdznie" class="account-text" />
             </div>
             <input type="submit" value="Rejestruj" class="button account-button" />
-        </h:form>
+        </form>
     </div>
 </div>
 

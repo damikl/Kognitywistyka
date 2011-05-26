@@ -1,13 +1,6 @@
 package pl.edu.uj.kognitywistyka.user.model;
 
-import java.io.Serializable;
-
-public class Scientist implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7006674462671394997L;
+public class Scientist {
 	
 	private long userId;
 	private String firstName;
@@ -15,7 +8,7 @@ public class Scientist implements Serializable{
 	private String university;
 	private String description;
 	private String title;
-	private String region;
+	private String state;
 	private String companyCategory;
 	private String pass;
 	
@@ -51,6 +44,16 @@ public class Scientist implements Serializable{
 		this.description = description;
 	}
 	
+	public String getState()
+	{
+		return state;
+	}
+	
+	public void setState(String state)
+	{
+		this.state = state;
+	}
+	
 	public String getCompanyCategory()
 	{
 		return companyCategory;
@@ -84,13 +87,4 @@ public class Scientist implements Serializable{
 	public String getPass() {
 		return pass;
 	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	public String getRegion() {
-		return region;
-	}
-	
 }
