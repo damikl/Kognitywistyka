@@ -9,11 +9,10 @@ import javax.faces.bean.RequestScoped;
 import pl.edu.uj.kognitywistyka.user.bo.RegistrationBo;
 import pl.edu.uj.kognitywistyka.user.model.Businessman;
 import pl.edu.uj.kognitywistyka.user.model.Scientist;
-import pl.edu.uj.kognitywistyka.user.model.User;
 
 @ManagedBean
 @RequestScoped
-public class RegistrationBean implements Serializable{
+public class Registration implements Serializable{
 
 	/**
 	 * 
@@ -123,36 +122,37 @@ public class RegistrationBean implements Serializable{
 	
 	public void register()
 	{
-		User registered = null;
-		
 		if(role == "Businessman")
 		{
-			registered = new Businessman();
+			Businessman registered = new Businessman();
+			registered.setFirstName(firstName);
+			registered.setLastName(lastName);
+			registered.setRegion(region);
+			registered.setCompany(company);
+			registered.setCompanyCategory(companyCategory);
 			
-			((Businessman)registered).setCompany(company);
-			((Businessman)registered).setPosition(position);
-			((Businessman)registered).setCompanyCategory(companyCategory);
-			((Businessman)registered).setDescription(description);
+			if(password == passConfirm)
+			{
+				registered.setPass(password);
+			}
+			registrationBo.register(registered);
 		}
 		if(role == "Scientist")
 		{
-			registered = new Scientist();
+			Scientist registered = new Scientist();
+			registered.setFirstName(firstName);
+			registered.setLastName(lastName);
+			registered.setRegion(region);
+			registered.setUniversity(company);
+			registered.setTitle(position);
 			
-			((Scientist)registered).setUniversity(company);
-			((Scientist)registered).setTitle(position);
+			if(password == passConfirm)
+			{
+				registered.setPass(password);
+			}
+			registrationBo.register(registered);
+			
 		}
-		
-		if(password == passConfirm)
-		{
-			registered.setPass(password);
-		}
-		
-		registered.setFirstName(firstName);
-		registered.setLastName(lastName);
-		registered.setCity(city);
-		registered.setRegion(region);
-		
-		registrationBo.register(registered);
 		resetView();
 	}
 	
