@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 import javax.validation.constraints.Pattern;
 
+@RequestScoped
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 6916816325466379714L;

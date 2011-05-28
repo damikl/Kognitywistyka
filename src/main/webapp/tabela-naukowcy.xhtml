@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="kontakt" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+	<ui:define name="siteContent">
+
+<div id="site-wrapper">
+	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Kontakt</p>
+	<aside class="sidebar2">
+        <ul class="submenu1 #{submenuChecked}">
+        	<li class="submenu-element1"><h:link value="Profil Naukowca" outcome="profilnaukowca" /></li>
+            <li class="submenu-element2"><h:link value="Badania" outcome="profilnaukowca" /></li>
+            <li class="submenu-element3"><h:link value="Publikacje" outcome="bazapublikacji" /></li>
+        </ul>
+    </aside>
+    
+        <div id="content2">
+		<header>
+			<ul class="tabs">
+	    		<ui:repeat var="kat" value="#{scientistBean.allTrades}">
+	    			<li><h:link	outcome="tabela-naukowcy" includeViewParams="true">
+        				<f:param name="id" value="#{kat.tradeId}"/>
+        				#{kat.tradeName}
+        			</h:link></li>
+					
+				</ui:repeat>
+			</ul>
+		</header>
+
+		<h:dataTable value="#{scientistBean.allScientist}" 
+    	             binding="#{scientistBean.dataTable}"
+    	             var="dataItem" class="publikacje-table" rows="10">
+    	             
+        	<h:column>
+    			<f:facet name="header">
+    				<p>Tytuł</p> 
+	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+    			</f:facet>
+    			<h:form><h4>
+    				<h:commandLink value="#{dataItem.positionInCompany}"
+    				               actionListener="#{scientistBean.editDataItem}"
+    				               action="publikacja" />
+    			</h4></h:form>
+        	</h:column>
+
+        	<h:column>
+        		<f:facet name="header">
+        			<p>Autor</p> 
+	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+        		</f:facet>
+        		<h:form>
+        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+        				<f:param name="id" value="#{dataItem.userId}"/>
+        				#{dataItem.firstName} #{dataItem.lastName}
+        		</h:link>
+        		</h:form>
+        	</h:column>
+
+        	<h:column>
+        		<f:facet name="header">
+        			<p>Data</p> 
+	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+        		</f:facet>
+    			#{dataItem.companyName}
+        	</h:column>
+        	
+        	<h:column>
+        		<f:facet name="header">
+        		</f:facet>
+        		<h:form>
+        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+        				<f:param name="id" value="#{dataItem.userId}"/>
+        				Zobacz
+        		</h:link>
+        		</h:form>
+        	</h:column>
+    	</h:dataTable>
+		 
+	    <div class="paginacja-box">
+	    	<div class="paginacja-prev">
+		    	<h:form><p>
+		    		<h:commandLink value="&lt;" action="#{scientistBean.pagePrevious}" class="link1"
+		                   rendered="#{scientistBean.dataTable.first != 0}" />
+		        </p></h:form>
+	        </div>
+	        
+	        <div class="paginacja-next">
+	        	<h:form><p>
+		    		<h:commandLink value="&gt;" action="#{publicationBean.pageNext}" class="link1"
+		                   rendered="#{scientistBean.dataTable.first + scientistBean.dataTable.rows &lt; scientistBean.dataTable.rowCount}" />
+		        </p></h:form>
+	        </div>
+	        
+	        <div class="paginacja-number">
+	        	<span><a href="#" class="link1">1</a></span>
+	        	<span class="paginacja-selected">2</span>
+	            <span><a href="#" class="link1">3</a></span>
+	            <span><a href="#" class="link1">4</a></span>
+	        </div>
+	    </div>
+    	
+    </div>
+</div>
+
+	</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>

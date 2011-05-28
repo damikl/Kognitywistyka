@@ -14,6 +14,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 import pl.edu.uj.kognitywistyka.user.bo.TradeBo;
 import pl.edu.uj.kognitywistyka.user.bo.UserBo;
@@ -50,9 +51,9 @@ public class RegistrationBean {
 	private String region;
 	private String password;
 	private String companyDescription;
-	private String[] tradesChosen;
+	private String[] chosen;
 	private List<String> tradeNamessList;
-	List<Trade> trades = null;
+	private List<Trade> trades = null;
 	
 	
 	@PostConstruct
@@ -66,6 +67,29 @@ public class RegistrationBean {
 			sendError("User already exists", "registerButton");
 			return "";
 		}else{
+			Set<Trade> tradesList = new HashSet<Trade>();
+			if(trades!= null){
+				for(String tradeName : chosen){
+				 	for(Trade trade : trades){
+				 		if(tradeName.equals(trade.getTradeName())){
+				 			tradesList.add(trade);
+				 		//	trades.remove(trade);
+				 		}
+				 	}
+				}
+			}
+			user.setTrades(tradesList);
+			if(profession != null)
+			{
+				user.setBusinessman(profession.equals("businessman"));
+				user.setScientist(profession.equals("scientist"));
+			}
+			else
+			{
+				user.setBusinessman(false);
+				user.setScientist(false);
+			}
+			
 			user.setCity(city);
 			user.setCompanyDescription(companyDescription);
 			user.setCompanyName(companyName);
@@ -74,7 +98,8 @@ public class RegistrationBean {
 			user.setLastName(lastName);
 			user.setPasswordHash(password);
 			user.setPositionInCompany(positionInCompany);
-			user.setRegion(region);
+			user.setRegion(region);	
+			
 			user.setUserName(userName);
 			userBean.setUser(userBo.createUser(user));
 			return "index";
@@ -117,13 +142,7 @@ public class RegistrationBean {
 	}
 	
 	public void setProfession(String profession){
-		if(profession == "businessman"){
-			user.setBusinessman(true);
-			user.setScientist(false);
-		}else{
-			user.setBusinessman(false);
-			user.setScientist(true);
-		}
+		this.profession = profession;
 	}
 	
 	public String getUserName() {
@@ -174,23 +193,11 @@ public class RegistrationBean {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	public String[] getTradesChosen() {
-		return tradesChosen;
+	public String[] getChosen() {
+		return chosen;
 	}
-	public void setTradesChosen(String[] tradesChosen) {
-		
-		Set<Trade> tradesList = new HashSet<Trade>();
-		if(trades!= null){
-			for(String tradeName : tradesChosen){
-			 	for(Trade trade : trades){
-			 		if(trade.getTradeName() == tradeName){
-			 			tradesList.add(trade);
-			 			trades.remove(trade);
-			 		}
-			 	}
-			}
-		}
-		user.setTrades(tradesList);
+	public void setChosen(String[] chosen) {
+		this.chosen = chosen;
 	}
 	public String getCompanyDescription() {
 		return companyDescription;
@@ -206,11 +213,12 @@ public class RegistrationBean {
 		this.userBean = userBean;
 	}
 	
-	public List<String> getTradeNamesList(){
+	public String[] getTradeNamesList(){
 		List<String> names = new ArrayList<String>();
 		for(Trade t : trades){
 			names.add(t.getTradeName());
 		}
-		return names; 
+		String[] a = new String[1];
+		return names.toArray(a); 
 	}
 }

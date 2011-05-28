@@ -1,13 +1,19 @@
 package pl.edu.uj.kognitywistyka.user.bo;
 
+import java.io.Serializable;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.edu.uj.kognitywistyka.user.dao.UserDao;
 import pl.edu.uj.kognitywistyka.user.model.User;
 
 @Transactional
-public class UserBoImpl implements UserBo {
+public class UserBoImpl implements UserBo, Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4991081556050600539L;
 	private UserDao userDao;
 	
 	

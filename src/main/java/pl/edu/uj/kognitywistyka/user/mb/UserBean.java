@@ -1,5 +1,6 @@
 package pl.edu.uj.kognitywistyka.user.mb;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 import javax.faces.application.FacesMessage;
@@ -16,8 +17,13 @@ import pl.edu.uj.kognitywistyka.user.model.User;
 
 @ManagedBean
 @SessionScoped
-public class UserBean {
+public class UserBean implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1526267089850470873L;
+	
 	@ManagedProperty(name = "userBo", value = "#{userBo}")
 	private UserBo userBo;
 	private User user;
