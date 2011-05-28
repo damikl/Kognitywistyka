@@ -103,7 +103,7 @@
 							<tr>
 								<td>Jestem :</td>
 								<td>
-									<h:selectOneRadio value="#{registrationBean.profession}">
+									<h:selectOneRadio value="#{registrationBean.profession}" required="true">
 										<f:selectItem itemValue="scientist" itemLabel="naukowcem" />
    										<f:selectItem itemValue="businessman" itemLabel="przedsiębiorcą" />
 									</h:selectOneRadio>
@@ -155,7 +155,7 @@
 							</tr>
 							<tr>
 								<td>Branże :</td>
-								<h:selectManyCheckbox id="trades" value="#{registrationBean.tradesChosen}">
+								<h:selectManyCheckbox id="trades" value="#{registrationBean.chosen}">
   									<f:selectItems value="#{registrationBean.tradeNamesList}"/>
 								</h:selectManyCheckbox>
 							</tr>

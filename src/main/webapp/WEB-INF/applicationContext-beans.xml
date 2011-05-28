@@ -20,6 +20,7 @@
 	<import resource="classes/xml/contact/spring/ContactRecipientBean.xml" />
 	<import resource="classes/xml/publication/spring/PublicationBean.xml" />
 	<import resource="classes/xml/user/spring/UserBean.xml" />
-	<import resource="classes/xml/user/spring/RegistrationBean.xml" />
+	<import resource="classes/xml/user/spring/RegistrationBean.xml" /><import
+		resource="classes/xml/user/spring/ScientistBean.xml" />
 
 </beans>
