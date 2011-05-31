@@ -1,6 +1,7 @@
 package pl.edu.uj.kognitywistyka.user.mb;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -99,6 +100,7 @@ public class RegistrationBean {
 			user.setPasswordHash(password);
 			user.setPositionInCompany(positionInCompany);
 			user.setRegion(region);	
+			user.setRegistrationDate(new Date());
 			
 			user.setUserName(userName);
 			userBean.setUser(userBo.createUser(user));

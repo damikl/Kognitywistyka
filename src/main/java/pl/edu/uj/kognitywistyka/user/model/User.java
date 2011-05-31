@@ -1,14 +1,13 @@
 package pl.edu.uj.kognitywistyka.user.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 import javax.validation.constraints.Pattern;
 
-@RequestScoped
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 6916816325466379714L;
@@ -18,6 +17,7 @@ public class User implements Serializable {
 	private String activationKey =" sdd ";
 	private boolean temporaryPassword = false;
 	private String passwordHash;
+	private Date registrationDate;
 	@Pattern(regexp="^[a-zA-Z\\d_]{4,12}$", message="Invalid screen name.")
 	private String userName;
 	private String firstName;
@@ -48,6 +48,17 @@ public class User implements Serializable {
 		this.userName = value;
 	}
 
+	public boolean participateIn(String tradeName)
+	{
+		for(Trade trade : trades)
+		{
+			if(trade.getTradeName().equals( tradeName ) )
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public boolean isActive() {
 		return active;
@@ -97,6 +108,14 @@ public class User implements Serializable {
 
 	public void setPasswordHash(String value) {
 		this.passwordHash = value;
+	}
+
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public Date getRegistrationDate() {
+		return registrationDate;
 	}
 
 	public boolean isTemporaryPassword() {
