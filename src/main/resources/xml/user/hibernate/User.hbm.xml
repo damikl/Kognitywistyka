@@ -17,7 +17,10 @@
 		<property name="passwordHash" type="java.lang.String">
 			<column name="passwordHash" not-null="true" length="100"/>
 		</property>
-  		<property name="userName" type="java.lang.String">
+		<property name="registrationDate" type="java.util.Date">
+			<column name="registrationDate" not-null="true"></column>
+		</property>
+		<property name="userName" type="java.lang.String">
         	<column name="userName" not-null="true" unique="true" length="20"/>
         </property>
         <property name="temporaryPassword" type="java.lang.Boolean">
@@ -26,7 +29,9 @@
 		<property name="scientist" type="java.lang.Boolean">
 			<column name="scientist" not-null="true"/>
 		</property>
-		
+		<property name="businessman" type="java.lang.Boolean">
+			<column name="businessman" not-null="true"></column></property>
+
 		<property name="firstName" type="java.lang.String">
 			<column name="firstName" not-null="true" length="30"/>
 		</property>
@@ -53,7 +58,7 @@
 			<column name="companyDescription" not-null="false" length="500"/>
 		</property>
 		<set name="trades" table="user_trade" 
-        	inverse="false" lazy="true" fetch="select" cascade="all" >
+        	inverse="false" lazy="false" fetch="select" cascade="all" >
             <key>
                 <column name="userId" not-null="true" />
             </key>

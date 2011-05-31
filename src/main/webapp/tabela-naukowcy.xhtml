@@ -18,10 +18,10 @@
 	<ui:define name="siteContent">
 
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; Kontakt</p>
+	<p id="site-navigation"><a href="index.jsf" class="link1">Strona główna</a> &gt; <a href="przedsiebiorca.jsf" class="link1">Jestem przedsiębiorcą</a> &gt; Naukowcy </p>
 	<aside class="sidebar2">
         <ul class="submenu1 #{submenuChecked}">
-        	<li class="submenu-element1"><h:link value="Profil Naukowca" outcome="profilnaukowca" /></li>
+        	<li class="submenu-element1"><h:link value="Naukowcy" outcome="profilnaukowca" /></li>
             <li class="submenu-element2"><h:link value="Badania" outcome="profilnaukowca" /></li>
             <li class="submenu-element3"><h:link value="Publikacje" outcome="bazapublikacji" /></li>
         </ul>
@@ -29,92 +29,100 @@
     
         <div id="content2">
 		<header>
+		<h:form>
 			<ul class="tabs">
 	    		<ui:repeat var="kat" value="#{scientistBean.allTrades}">
-	    			<li><h:link	outcome="tabela-naukowcy" includeViewParams="true">
-        				<f:param name="id" value="#{kat.tradeId}"/>
-        				#{kat.tradeName}
-        			</h:link></li>
-					
+        			
+	        			<li>
+	        				<h:commandLink value="#{kat.tradeName}" action="#{scientistBean.filterBy(kat.tradeName)}"/>
+	        			</li>
+        			
 				</ui:repeat>
 			</ul>
+		</h:form>
 		</header>
-
-		<h:dataTable value="#{scientistBean.allScientist}" 
-    	             binding="#{scientistBean.dataTable}"
-    	             var="dataItem" class="publikacje-table" rows="10">
-    	             
-        	<h:column>
-    			<f:facet name="header">
-    				<p>Tytuł</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
-    			</f:facet>
-    			<h:form><h4>
-    				<h:commandLink value="#{dataItem.positionInCompany}"
-    				               actionListener="#{scientistBean.editDataItem}"
-    				               action="publikacja" />
-    			</h4></h:form>
-        	</h:column>
-
-        	<h:column>
-        		<f:facet name="header">
-        			<p>Autor</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
-        		</f:facet>
-        		<h:form>
-        		<h:link	outcome="profilnaukowca" includeViewParams="true">
-        				<f:param name="id" value="#{dataItem.userId}"/>
-        				#{dataItem.firstName} #{dataItem.lastName}
-        		</h:link>
-        		</h:form>
-        	</h:column>
-
-        	<h:column>
-        		<f:facet name="header">
-        			<p>Data</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
-        		</f:facet>
-    			#{dataItem.companyName}
-        	</h:column>
-        	
-        	<h:column>
-        		<f:facet name="header">
-        		</f:facet>
-        		<h:form>
-        		<h:link	outcome="profilnaukowca" includeViewParams="true">
-        				<f:param name="id" value="#{dataItem.userId}"/>
-        				Zobacz
-        		</h:link>
-        		</h:form>
-        	</h:column>
-    	</h:dataTable>
-		 
-	    <div class="paginacja-box">
-	    	<div class="paginacja-prev">
-		    	<h:form><p>
-		    		<h:commandLink value="&lt;" action="#{scientistBean.pagePrevious}" class="link1"
-		                   rendered="#{scientistBean.dataTable.first != 0}" />
-		        </p></h:form>
-	        </div>
-	        
-	        <div class="paginacja-next">
-	        	<h:form><p>
-		    		<h:commandLink value="&gt;" action="#{publicationBean.pageNext}" class="link1"
-		                   rendered="#{scientistBean.dataTable.first + scientistBean.dataTable.rows &lt; scientistBean.dataTable.rowCount}" />
-		        </p></h:form>
-	        </div>
-	        
-	        <div class="paginacja-number">
-	        	<span><a href="#" class="link1">1</a></span>
-	        	<span class="paginacja-selected">2</span>
-	            <span><a href="#" class="link1">3</a></span>
-	            <span><a href="#" class="link1">4</a></span>
-	        </div>
-	    </div>
-    	
+				
+				<h:dataTable value="#{scientistBean.usersList}" 
+		    	             binding="#{scientistBean.dataTable}"
+		    	             var="dataItem" class="publikacje-table">
+		    	             
+		        	<h:column>
+		    			<f:facet name="header">
+		    				<p>Tytuł</p> 
+			                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+			                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+		    			</f:facet>
+		    				<h:outputText value="#{dataItem.positionInCompany}"/>
+		        	</h:column>
+		
+		        	<h:column>
+		        		<f:facet name="header">
+		        			<h:form>
+			        			<p>Autor</p>
+				                <h:commandLink action="#{scientistBean.sortByLastNameDesc()}">
+				                	<img src="resources/images/arrow_up.png" />
+				                </h:commandLink>
+				                <h:commandLink action="#{scientistBean.sortByLastNameAsc()}">
+				                	<img src="resources/images/arrow_down.png" />
+				                </h:commandLink>
+			                </h:form>
+		        		</f:facet>
+		        		<h:form>
+		        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+		        				<f:param name="id" value="#{dataItem.userId}"/>
+		        				#{dataItem.firstName} #{dataItem.lastName}
+		        		</h:link>
+		        		</h:form>
+		        	</h:column>
+		
+		        	<h:column>
+		        		<f:facet name="header">
+		        			<p>Data</p> 
+			                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+			                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+		        		</f:facet>
+		    			
+		    			<h:outputText value="#{dataItem.registrationDate}">
+  							<f:convertDateTime pattern="yyyy-MM-dd " type="date" />
+						</h:outputText>
+		        	</h:column>
+		        	
+		        	<h:column>
+		        		<f:facet name="header">
+		        		</f:facet>
+		        		<h:form>
+		        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+		        				<f:param name="id" value="#{dataItem.userId}"/>
+		        				Zobacz
+		        		</h:link>
+		        		</h:form>
+		        	</h:column>
+		    	</h:dataTable>
+			 
+			    <div class="paginacja-box">
+			    	<div class="paginacja-prev">
+				    	<h:form><p>
+				    		<h:commandLink value="&lt;" action="#{scientistBean.pagePrevious}" class="link1"
+				                   rendered="#{scientistBean.currentPage != 1}" />
+				        </p></h:form>
+			        </div>
+			        
+			        <div class="paginacja-next">
+			        	<h:form><p>
+				    		<h:commandLink value="&gt;" action="#{publicationBean.pageNext}" class="link1"
+				                   rendered="#{scientistBean.totalPages != scientistBean.currentPage}" />
+				        </p></h:form>
+			        </div>
+			        
+			        <div class="paginacja-number">
+			        	<span><a href="#" class="link1">1</a></span>
+			        	<span class="paginacja-selected">2</span>
+			            <span><a href="#" class="link1">3</a></span>
+			            <span><a href="#" class="link1">4</a></span>
+			        </div>
+			    </div>
+			
+		    
     </div>
 </div>
 
