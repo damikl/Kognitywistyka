@@ -1,11 +1,9 @@
 package pl.edu.uj.kognitywistyka.user.mb;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -34,9 +32,7 @@ public class ScientistBean implements Serializable {
 	@ManagedProperty(name = "tradeBo", value = "#{tradeBo}")
 	private TradeBo tradeBo;
 
-	private Long trade = null;
 	private List<Trade> allTrades;
-	private Map<String, List<User>> map;
 
 	private List<User> usersList;
 	private FilterAndSortData<User> filter;
@@ -46,7 +42,7 @@ public class ScientistBean implements Serializable {
 				getAllScientist()));
 	}
 	
-	private void setFilter() {
+	public void reset() {
 		filter = new FilterAndSortData<User>(new ListDataModel<User>(usersList));
 	}
 
@@ -64,9 +60,9 @@ public class ScientistBean implements Serializable {
 				return false;
 			}
 		};
-
+		
 		setUsersList();
-		setFilter();
+		reset();
 		filter.filterBy(tradeNamePredicate);
 	}
 	
@@ -117,7 +113,7 @@ public class ScientistBean implements Serializable {
 		return usersList;
 	}
 
-	public void setTrade(Long tradeId) {
+/*	public void setTrade(Long tradeId) {
 		this.trade = tradeId;
 	}
 
@@ -130,7 +126,7 @@ public class ScientistBean implements Serializable {
 			trade = this.getAllTrades().get(0).getTradeId();
 		}
 		return getScientistFor(trade);
-	}
+	}*/
 
 	public List<User> getScientistBy(String tradeName) {
 		System.out.println("Input: " + tradeName);
@@ -143,32 +139,6 @@ public class ScientistBean implements Serializable {
 		if (t == null)
 			System.out.println("Znowu ten b³¹d");
 		return this.getScientistFor(t.getTradeId());
-	}
-
-	public Map<String, List<User>> getMap() {
-		if (map == null) {
-			map = new TreeMap<String, List<User>>();
-			for (Trade trade : getAllTrades()) {
-				List<User> userslist = this.getScientistFor(trade.getTradeId());
-				map.put(trade.getTradeName(), userslist);
-			}
-		}
-		System.out.println(map.size());
-		for (String tradeName : map.keySet()) {
-			System.out.println(tradeName);
-
-			for (User user : map.get(tradeName)) {
-				System.out.println(user.getLastName());
-			}
-		}
-		return map;
-	}
-
-	public List<String> getMapKeys() {
-		List<String> ret = new ArrayList<String>();
-		for (String s : getMap().keySet())
-			ret.add(s);
-		return ret;
 	}
 
 	public List<User> getScientistFor(Long trade) {

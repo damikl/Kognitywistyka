@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets">
+		  	xmlns:ui="http://java.sun.com/jsf/facelets"
+	  		xmlns:h="http://java.sun.com/jsf/html"
+	  		xmlns:f="http://java.sun.com/jsf/core">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -29,7 +31,8 @@
             	purus vulputate non.Praesent tempus consectetur lorem, ac posuere 
             	purus vulputate non.Praesent tempus consectetur lorem, ac posuere 
             	purus vulputate non.</p>
-            	<p><a class="link1" href="#">Znajdź naukowca z Twojej branży</a></p>
+            	<p><h:link	outcome="tabela-naukowcy" class="link1">Znajdź naukowca z Twojej branży</h:link></p>
+		  
             </section>
         </article>
         <article class="index-proposition">
@@ -80,11 +83,16 @@
         </div>
         <div class="index-sidebar-box last-index-sidebar-box">
         <h4>Ostatnio zarejestrowani naukowcy</h4>
-            <ul class="jestem-list">
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-            </ul>
+        	<ul class="jestem-list">
+	        	<ui:repeat var="scientist" value="#{fullScientistNameBean.usersList}" class="jestem-list" >
+			        <li><h:link	outcome="profilnaukowca" 
+			        			includeViewParams="true" 
+			        			value="#{scientist.firstName} #{scientist.lastName}"
+			        			class="link1">
+			        	<f:param name="id" value="#{scientist.userId}"/>			
+			        </h:link></li>
+			    </ui:repeat>
+		    </ul>	
         </div>
         <div class="index-sidebar-box last-index-sidebar-box">
         <h4>Ostatnio dodane badania</h4>
