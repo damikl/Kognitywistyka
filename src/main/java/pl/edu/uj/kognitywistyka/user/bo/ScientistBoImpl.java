@@ -23,7 +23,9 @@ public class ScientistBoImpl implements ScientistBo, Serializable{
 	public List<User> findAllScientist() {
 		return scientistDao.findAllScientist();
 	}
-
+	
+	
+	
 	public User getScientist(long id) {
 		return scientistDao.getScientist(id);
 	}
@@ -31,6 +33,11 @@ public class ScientistBoImpl implements ScientistBo, Serializable{
 	@Override
 	public List<User> findScientistFor(Long trade) {
 		return scientistDao.findScientistFor(trade);
+	}
+
+	@Override
+	public List<User> findLastRegisteredScientist() {
+		return this.scientistDao.findLastRegistered();
 	}
 
 }

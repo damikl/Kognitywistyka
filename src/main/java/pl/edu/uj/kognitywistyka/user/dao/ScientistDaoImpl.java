@@ -35,4 +35,11 @@ public class ScientistDaoImpl extends HibernateDaoSupport implements ScientistDa
 		return query.list();
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<User> findLastRegistered() {
+		HibernateTemplate ht = getHibernateTemplate();
+		ht.setMaxResults(3);
+		return ht.find("from User u where u.scientist='1' order by registrationDate desc");
+	}
+
 }

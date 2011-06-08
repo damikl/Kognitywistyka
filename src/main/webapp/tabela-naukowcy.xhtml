@@ -20,11 +20,13 @@
 <div id="site-wrapper">
 	<p id="site-navigation"><a href="index.jsf" class="link1">Strona główna</a> &gt; <a href="przedsiebiorca.jsf" class="link1">Jestem przedsiębiorcą</a> &gt; Naukowcy </p>
 	<aside class="sidebar2">
+	<h:form>
         <ul class="submenu1 #{submenuChecked}">
-        	<li class="submenu-element1"><h:link value="Naukowcy" outcome="profilnaukowca" /></li>
+        	<li class="submenu-element1"><h:commandLink action="#{scientistBean.reset()}">Naukowcy</h:commandLink></li>
             <li class="submenu-element2"><h:link value="Badania" outcome="profilnaukowca" /></li>
             <li class="submenu-element3"><h:link value="Publikacje" outcome="bazapublikacji" /></li>
         </ul>
+    </h:form>
     </aside>
     
         <div id="content2">
@@ -68,7 +70,7 @@
 			                </h:form>
 		        		</f:facet>
 		        		<h:form>
-		        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+		        		<h:link	outcome="profilnaukowca" includeViewParams="true" class="link1">
 		        				<f:param name="id" value="#{dataItem.userId}"/>
 		        				#{dataItem.firstName} #{dataItem.lastName}
 		        		</h:link>
@@ -91,7 +93,7 @@
 		        		<f:facet name="header">
 		        		</f:facet>
 		        		<h:form>
-		        		<h:link	outcome="profilnaukowca" includeViewParams="true">
+		        		<h:link	outcome="profilnaukowca" includeViewParams="true" class="link1">
 		        				<f:param name="id" value="#{dataItem.userId}"/>
 		        				Zobacz
 		        		</h:link>

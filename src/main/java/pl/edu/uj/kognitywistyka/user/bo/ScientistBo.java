@@ -9,7 +9,9 @@ public interface ScientistBo {
 	List<User> findAllScientist();
 
 	User getScientist(long id);
-
+	
+	List<User> findLastRegisteredScientist();
+	
 	List<User> findScientistFor(Long trade);
 
 }

@@ -9,7 +9,7 @@ public interface ScientistDao {
 	List<User> findAllScientist();
 
 	User getScientist(Long id);
-
+	List<User> findLastRegistered();
 	List<User> findScientistFor(Long trade);
 
 }
