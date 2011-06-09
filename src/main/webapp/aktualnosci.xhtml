@@ -27,46 +27,17 @@
 	<ui:include src="/templates/sections/sidebars/aktualnosci.xhtml" />
 	
     <h3 class="aktualnosci-header">Aktualności</h3>
+    <ui:repeat var="news" value="#{newsBean.allNews}">
         <article class="index-article">
         	<header>
-            	<h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
+            	<h4><a href="#" class="link1">#{news.title}</a></h4>
+                <time datetime="14-06-2010">#{news.date}</time>
             </header>
             <section>
-            	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
+            	<p>#{news.content}</p>
             </section>
         </article>
-        <article class="index-article">
-        	<header>
-            	<h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-            	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
-            </section>
-        </article>
-        <article class="index-article">
-        	<header>
-            	<h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-            	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
-            </section>
-        </article>
-        <article class="index-article">
-        	<header>
-            	<h4><a href="#" class="link1">Nazwa najnowszej wiadomości</a></h4>
-                <time datetime="14-06-2010">14 czerwca 2010</time>
-            </header>
-            <section>
-            	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
-                <p class="link-right"><a href="#" class="link3">Czytaj dalej</a></p>
-            </section>
-        </article>
+    </ui:repeat>
         <p class="link-right"><a href="#" class="link3 link-more">Zobacz pozostałe wiadomości</a></p>
 </div>
 

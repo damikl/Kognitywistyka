@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		  xmlns:ui="http://java.sun.com/jsf/facelets"
+		  xmlns:h="http://java.sun.com/jsf/html"
+		  xmlns:f="http://java.sun.com/jsf/core">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="przedsiebiorca" />
+	
+<!-- Tu podajemy która pozycja submenu ma być zaznaczona -->
+	<ui:param name="submenuChecked" value="submenu-checked3" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+<ui:define name="siteContent">
+
+	<div id="site-wrapper">
+		<p id="site-navigation">
+		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+		<h:link value="Przedsiębiorca" outcome="przedsiebiorca" class="link1" /> &gt; 
+		Zamówienia na badania
+	</p>
+
+		<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
+
+			<div>
+			<table id="requests" cellspacing="0"> 
+			<thead> 
+				<tr>  
+    				<th>Zamówienie na badanie</th>
+    				<th>Firma</th>
+    				<th>Data</th>
+    				<th>Zobacz</th>
+				</tr> 
+			</thead> 
+			<tbody> 
+				<ui:repeat var="data" value="#{requestBunchBean.allRequests}">
+					<tr>  
+	    				<td>#{data.title}</td> 
+	    				<td>#{data.company}</td>
+	    				<td>#{data.shortDate()}</td>
+	    				<td>
+							<h:link outcome="zamowienie" includeViewParams="true">
+	    							<f:param name="requestid" value="#{data.requestId}"/>
+                					Zobacz!
+                			</h:link>
+						</td>
+					</tr>  
+				</ui:repeat>
+			</tbody> 
+			</table>
+			</div>
+</div>
+</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>
