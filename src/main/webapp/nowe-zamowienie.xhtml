@@ -29,21 +29,13 @@
 
 		<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
 
-			<h:form id="registerform" onsubmit="return validate()">
+			<h:form id="registerform" class="contact-form" onsubmit="return validate()">
 						<table>
 							<tr>
 								<td>
 									<h:outputLabel for="nazwa" value="Nazwa:" />
 	                   				<h:inputText id="nazwa" value="#{requestBean.title}" required="true"/>
 								</td>
-							</tr>
-							<tr>
-								<td>
-									<h:outputLabel for="data" value="Data (DD/MM/YYYY):" />
-				                    <h:inputText id="data" value="#{requestBean.date}" required="true" >
-				                    	<f:convertDateTime pattern="dd/MM/yyyy" />
-				                    </h:inputText>
-			                    </td>
 							</tr>
 							<tr>
 								<td>
@@ -72,7 +64,7 @@
 							</tr>
 						</table>
 						<p />
-						<h:commandButton value="Dodaj" action="#{requestBean.addRequest}" />
+						<h:commandButton value="Dodaj" class="button contact-button" action="#{requestBean.addRequest}" />
 						<br />
 
 					</h:form>
