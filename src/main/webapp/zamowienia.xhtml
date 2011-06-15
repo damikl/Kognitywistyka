@@ -33,10 +33,10 @@
 			<table id="requests" cellspacing="0"> 
 			<thead> 
 				<tr>  
-    				<th>Zamówienie na badanie</th>
-    				<th>Firma</th>
-    				<th>Data</th>
-    				<th>Zobacz</th>
+    				<th><p class="aktualnosci-header">Zamówienie na badanie</p></th>
+    				<th><p class="aktualnosci-header">Firma</p></th>
+    				<th><p class="aktualnosci-header">Data</p></th>
+    				<th><p class="aktualnosci-header">Zobacz</p></th>
 				</tr> 
 			</thead> 
 			<tbody> 
@@ -46,7 +46,7 @@
 	    				<td>#{data.company}</td>
 	    				<td>#{data.shortDate()}</td>
 	    				<td>
-							<h:link outcome="zamowienie" includeViewParams="true">
+							<h:link outcome="zamowienie" includeViewParams="true" class="link1">
 	    							<f:param name="requestid" value="#{data.requestId}"/>
                 					Zobacz!
                 			</h:link>

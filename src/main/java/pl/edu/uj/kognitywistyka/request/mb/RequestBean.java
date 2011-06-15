@@ -128,7 +128,7 @@ public class RequestBean implements Serializable {
 	public String addRequest() {
 		Request request = new Request();
 		request.setTitle(title);
-		request.setDate(date);
+		request.setDate(new Date());
 		request.setCompany(company);
 		request.setPerson(person);
 		request.setTags(tags);
