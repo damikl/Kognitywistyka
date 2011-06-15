@@ -41,7 +41,7 @@ public class RegistrationBean {
 		this.tradeBo = tradeBo;
 	}
 
-	private String profession;
+	private List<String> profession;
 	private String userName;
 	private String firstName;
 	private String lastName;
@@ -139,11 +139,11 @@ public class RegistrationBean {
 	}
 
 	
-	public String getProfession(){
+	public List<String> getProfession(){
 		return profession;
 	}
 	
-	public void setProfession(String profession){
+	public void setProfession(List<String> profession){
 		this.profession = profession;
 	}
 	

@@ -2,6 +2,7 @@ package pl.edu.uj.kognitywistyka.request.mb;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -26,11 +27,11 @@ public class RequestBean implements Serializable {
 	private String tags;
 	private String content;
 	
+	private List<Request> allRequests;
+	
 	// Dependency injection
 	@ManagedProperty(name="requestBo", value="#{requestBo}")
 	RequestBo requestBo;
-	@ManagedProperty(name="requestBunchBean", value="#{requestBunchBean}")
-	RequestBunchBean requestBunchBean;
 	
 	@PostConstruct
 	@SuppressWarnings("unused")
@@ -52,6 +53,12 @@ public class RequestBean implements Serializable {
 			this.tags = request.getTags();
 			this.content = request.getContent();
 		}
+	}
+	
+	public List<Request> getAllRequests() {
+		if(allRequests == null)
+			allRequests = requestBo.findAllRequests();
+		return allRequests;
 	}
 	
 	public long getRequestId() {
@@ -114,9 +121,9 @@ public class RequestBean implements Serializable {
 		this.requestBo = requestBo;
 	}
 	
-	public void setRequestBunchBean(RequestBunchBean requestBunchBean) {
-		this.requestBunchBean = requestBunchBean;
-	}
+//	public void setRequestBunchBean(RequestBunchBean requestBunchBean) {
+//		this.requestBunchBean = requestBunchBean;
+//	}
 	
 	public String addRequest() {
 		Request request = new Request();
@@ -160,6 +167,5 @@ public class RequestBean implements Serializable {
 		setContent("");
 		setDate(null);
 		setTitle("");
-		requestBunchBean.setAllRequests(null);
 	}
 }

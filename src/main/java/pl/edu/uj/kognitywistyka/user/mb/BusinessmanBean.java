@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
 
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -13,7 +12,7 @@ import javax.faces.component.html.HtmlInputHidden;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
-import pl.edu.uj.kognitywistyka.user.bo.ScientistBo;
+import pl.edu.uj.kognitywistyka.user.bo.BusinessmanBo;
 import pl.edu.uj.kognitywistyka.user.bo.TradeBo;
 import pl.edu.uj.kognitywistyka.user.model.FilterAndSortData;
 import pl.edu.uj.kognitywistyka.user.model.Trade;
@@ -22,16 +21,19 @@ import pl.edu.uj.kognitywistyka.util.Predicate;
 
 @ManagedBean
 @SessionScoped
-public class ScientistBean implements Serializable {
-	// TODO: Na podstawie PublicationBean
-	private static final long serialVersionUID = 153476492772637L;
+public class BusinessmanBean implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4558450268371941431L;
 
-	@ManagedProperty(name = "scientistBo", value = "#{scientistBo}")
-	private ScientistBo scientistBo;
+	@ManagedProperty(name = "businessmanBo", value = "#{businessmanBo}")
+	private BusinessmanBo businessmanBo;
 
 	@ManagedProperty(name = "tradeBo", value = "#{tradeBo}")
 	private TradeBo tradeBo;
-
+	
 	private List<Trade> allTrades;
 
 	private List<User> usersList;
@@ -39,7 +41,7 @@ public class ScientistBean implements Serializable {
 
 	public void setFilter(FilterAndSortData<User> filter) {
 		filter = new FilterAndSortData<User>(new ListDataModel<User>(
-				getAllScientist()));
+				this.getAllBusinessman()));
 	}
 	
 	public void reset() {
@@ -68,12 +70,12 @@ public class ScientistBean implements Serializable {
 	
 	public void setUsersList(List<User> users)
 	{
-		this.usersList = this.scientistBo.findAllScientist();
+		this.usersList = this.businessmanBo.findAllBusinessman();
 	}
 	
 	private void setUsersList()
 	{
-		this.usersList = this.scientistBo.findAllScientist();
+		this.usersList = this.businessmanBo.findAllBusinessman();
 	}
 	
 	public String sortByLastNameAsc() {
@@ -94,26 +96,26 @@ public class ScientistBean implements Serializable {
 		return null;
 	}
 
-	public void setScientistBo(ScientistBo scientistBo) {
-		this.scientistBo = scientistBo;
+	public void setBusinessmanBo(BusinessmanBo businessmanBo) {
+		this.businessmanBo = businessmanBo;
 	}
 
 	public DataModel<User> getUsersList() {
 		if (filter == null) {
 			filter = new FilterAndSortData<User>(new ListDataModel<User>(
-					getAllScientist()));
+					getAllBusinessman()));
 		}
 		return this.filter;
 	}
 
-	public List<User> getAllScientist() {
+	public List<User> getAllBusinessman() {
 		if (usersList == null)
-			usersList = this.scientistBo.findAllScientist();
+			usersList = this.businessmanBo.findAllBusinessman();
 		System.out.println(usersList.size());
 		return usersList;
 	}
 
-	public List<User> getScientistBy(String tradeName) {
+	public List<User> getBusinessmanBy(String tradeName) {
 		System.out.println("Input: " + tradeName);
 		Trade t = null;
 		for (Trade trade : allTrades) {
@@ -123,11 +125,11 @@ public class ScientistBean implements Serializable {
 		}
 		if (t == null)
 			System.out.println("Znowu ten b³¹d");
-		return this.getScientistFor(t.getTradeId());
+		return this.getBusinessmanFor(t.getTradeId());
 	}
 
-	public List<User> getScientistFor(Long trade) {
-		return scientistBo.findScientistFor(trade);
+	public List<User> getBusinessmanFor(Long trade) {
+		return this.businessmanBo.findBusinessmanFor(trade);
 	}
 
 	public List<Trade> getAllTrades() {
@@ -136,8 +138,8 @@ public class ScientistBean implements Serializable {
 		return allTrades;
 	}
 
-	public User getScientist(long id) {
-		return this.scientistBo.getScientist(id);
+	public User getBusinessman(long id) {
+		return this.businessmanBo.getBusinessman(id);
 	}
 
 	private HtmlDataTable dataTable;
@@ -215,5 +217,4 @@ public class ScientistBean implements Serializable {
 	public void setTradeBo(TradeBo tradeBo) {
 		this.tradeBo = tradeBo;
 	}
-
 }
