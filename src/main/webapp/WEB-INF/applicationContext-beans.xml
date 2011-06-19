@@ -18,11 +18,12 @@
 	<import resource="classes/xml/news/spring/NewsBean.xml" />
 	<import resource="classes/xml/contact/spring/ContactBean.xml" />
 	<import resource="classes/xml/contact/spring/ContactRecipientBean.xml" />
-	<import resource="classes/xml/publication/spring/PublicationBean.xml" ></import>
+	<import resource="classes/xml/publication/spring/PublicationBean.xml" />
 	<import resource="classes/xml/user/spring/UserBean.xml" />
 	<import resource="classes/xml/user/spring/RegistrationBean.xml" />
-	<import resource="classes/xml/user/spring/ScientistBean.xml" /><import
-		resource="classes/xml/user/spring/BusinessmanBean.xml" />
+	<import resource="classes/xml/user/spring/ScientistBean.xml" />
+	<import resource="classes/xml/user/spring/BusinessmanBean.xml" />
 	<import resource="classes/xml/request/spring/RequestBean.xml" />
+	<import resource="classes/xml/request/spring/RequestBunchBean.xml" />
 
 </beans>

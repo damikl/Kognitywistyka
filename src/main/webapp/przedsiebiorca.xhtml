@@ -46,7 +46,7 @@
             	purus vulputate non.Praesent tempus consectetur lorem, ac posuere 
             	purus vulputate non.Praesent tempus consectetur lorem, ac posuere 
             	purus vulputate non.</p>
-            	<p><h:link	outcome="zamowienia" class="link1">Znajdź naukowca z Twojej branży</h:link></p>
+            	<p><h:link	outcome="zamowienia" class="link1">Dofinansuj interesujące projekty</h:link></p>
             </section>
         </article>
         <article class="index-proposition">
@@ -97,7 +97,7 @@
         <div class="index-sidebar-box last-index-sidebar-box">
         <h4>Ostatnio dodane badania</h4>
             <ul class="jestem-list">
-	        	<ui:repeat var="data" value="#{requestBean.allRequests}">
+	        	<ui:repeat var="data" value="#{requestBunchBean.allRequests}">
 			        <li><h:link	outcome="zamowienie" includeViewParams="true" class="link1">
 	    							<f:param name="requestid" value="#{data.requestId}"/>
                 					#{data.title}			

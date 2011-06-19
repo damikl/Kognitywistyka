@@ -60,7 +60,7 @@
 		        	<h:column>
 		        		<f:facet name="header">
 		        			<h:form>
-			        			<p>Autor</p>
+			        			<p>Naukowiec</p>
 				                <h:commandLink action="#{scientistBean.sortByLastNameDesc()}">
 				                	<img src="resources/images/arrow_up.png" />
 				                </h:commandLink>
@@ -111,7 +111,7 @@
 			        
 			        <div class="paginacja-next">
 			        	<h:form><p>
-				    		<h:commandLink value="&gt;" action="#{publicationBean.pageNext}" class="link1"
+				    		<h:commandLink value="&gt;" action="#{scientistBean.pageNext}" class="link1"
 				                   rendered="#{scientistBean.totalPages != scientistBean.currentPage}" />
 				        </p></h:form>
 			        </div>
