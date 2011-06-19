@@ -22,52 +22,54 @@
 
 	<div id="site-wrapper">
 		<p id="site-navigation">
-		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
-		<h:link value="Przedsiębiorca" outcome="przedsiebiorca" class="link1" /> &gt; 
-		Nowe Zamówienie
-	</p>
+			<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+			<h:link value="Przedsiębiorca" outcome="przedsiebiorca" class="link1" /> &gt; 
+			Nowe Zamówienie
+		</p>
 
 		<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
-
-			<h:form id="registerform" class="contact-form" onsubmit="return validate()">
-						<table>
-							<tr>
-								<td>
-									<h:outputLabel for="nazwa" value="Nazwa:" />
-	                   				<h:inputText id="nazwa" value="#{requestBean.title}" required="true"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h:outputLabel for="firma" value="Firma:" />
-	                   				<h:inputText id="firma" value="#{requestBean.company}" required="true"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h:outputLabel for="osoba" value="Osoba:" />
-	                   				<h:inputText id="osoba" value="#{requestBean.person}" required="true"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h:outputLabel for="tagi" value="Tagi (oddzielone przecinkami):" />
-	                   				<h:inputText id="tagi" value="#{requestBean.tags}" required="false"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-				                	<h:outputLabel for="opis" value="Opis: " />
-				                    <h:inputTextarea id="opis" value="#{requestBean.content}" rows="5" required="true">
-				                	</h:inputTextarea>
-	                			</td>
-							</tr>
-						</table>
+			<div id="content2">
+				<h3>Dodaj nowe zamówienie</h3>
+				<h:form id="registerform" class="contact-form" onsubmit="return validate()">
+					<table>
+						<tr>
+							<td>
+								<h:outputLabel for="nazwa" value="Nazwa:" />
+                   				<h:inputText id="nazwa" value="#{requestBean.title}" required="true"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h:outputLabel for="firma" value="Firma:" />
+                   				<h:inputText id="firma" value="#{requestBean.company}" required="true"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h:outputLabel for="osoba" value="Osoba:" />
+                   				<h:inputText id="osoba" value="#{requestBean.person}" required="true"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h:outputLabel for="tagi" value="Tagi (oddzielone przecinkami):" />
+                   				<h:inputText id="tagi" value="#{requestBean.tags}" required="false"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+			                	<h:outputLabel for="opis" value="Opis: " />
+			                    <h:inputTextarea id="opis" value="#{requestBean.content}" rows="5" required="true">
+			                	</h:inputTextarea>
+                			</td>
+						</tr>
+					</table>
 						<p />
 						<h:commandButton value="Dodaj" class="button contact-button" action="#{requestBean.addRequest}" />
 						<br />
-
-					</h:form>
+	
+				</h:form>
+			</div>
 </div>
 </ui:define>
 </ui:composition>

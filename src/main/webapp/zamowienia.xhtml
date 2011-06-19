@@ -22,41 +22,42 @@
 
 	<div id="site-wrapper">
 		<p id="site-navigation">
-		<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
-		<h:link value="Przedsiębiorca" outcome="przedsiebiorca" class="link1" /> &gt; 
-		Zamówienia na badania
-	</p>
+			<h:link value="Strona główna" outcome="index" class="link1" /> &gt; 
+			<h:link value="Przedsiębiorca" outcome="przedsiebiorca" class="link1" /> &gt; 
+			Zamówienia na badania
+		</p>
 
 		<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
 
 			<div>
-			<table id="requests" cellspacing="0"> 
-			<thead> 
-				<tr>  
-    				<th><p class="aktualnosci-header">Zamówienie na badanie</p></th>
-    				<th><p class="aktualnosci-header">Firma</p></th>
-    				<th><p class="aktualnosci-header">Data</p></th>
-    				<th><p class="aktualnosci-header">Zobacz</p></th>
-				</tr> 
-			</thead> 
-			<tbody> 
-				<ui:repeat var="data" value="#{requestBean.allRequests}">
-					<tr>  
-	    				<td>#{data.title}</td> 
-	    				<td>#{data.company}</td>
-	    				<td>#{data.shortDate()}</td>
-	    				<td>
-							<h:link outcome="zamowienie" includeViewParams="true" class="link1">
-	    							<f:param name="requestid" value="#{data.requestId}"/>
-                					Zobacz!
-                			</h:link>
-						</td>
-					</tr>  
-				</ui:repeat>
-			</tbody> 
-			</table>
+				<table id="requests" cellspacing="0"> 
+					<thead> 
+						<tr>  
+		    				<th><p class="aktualnosci-header">Zamówienie na badanie</p></th>
+		    				<th><p class="aktualnosci-header">Firma</p></th>
+		    				<th><p class="aktualnosci-header">Data</p></th>
+		    				<th><p class="aktualnosci-header">Zobacz</p></th>
+						</tr> 
+					</thead>
+					
+					<tbody> 
+						<ui:repeat var="data" value="#{requestBean.allRequests}">
+							<tr>  
+			    				<td>#{data.title}</td> 
+			    				<td>#{data.company}</td>
+			    				<td>#{data.shortDate()}</td>
+			    				<td>
+									<h:link outcome="zamowienie" includeViewParams="true" class="link1">
+			    							<f:param name="requestid" value="#{data.requestId}"/>
+		                					Zobacz!
+		                			</h:link>
+								</td>
+							</tr>  
+						</ui:repeat>
+					</tbody> 
+				</table>
 			</div>
-</div>
+	</div>
 </ui:define>
 </ui:composition>
 
