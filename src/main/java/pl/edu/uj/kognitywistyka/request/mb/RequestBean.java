@@ -2,7 +2,6 @@ package pl.edu.uj.kognitywistyka.request.mb;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -26,8 +25,6 @@ public class RequestBean implements Serializable {
 	private String person;
 	private String tags;
 	private String content;
-	
-	private List<Request> allRequests;
 	
 	// Dependency injection
 	@ManagedProperty(name="requestBo", value="#{requestBo}")
@@ -53,12 +50,6 @@ public class RequestBean implements Serializable {
 			this.tags = request.getTags();
 			this.content = request.getContent();
 		}
-	}
-	
-	public List<Request> getAllRequests() {
-		if(allRequests == null)
-			allRequests = requestBo.findAllRequests();
-		return allRequests;
 	}
 	
 	public long getRequestId() {

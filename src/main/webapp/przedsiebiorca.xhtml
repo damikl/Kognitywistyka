@@ -97,7 +97,7 @@
         <div class="index-sidebar-box last-index-sidebar-box">
         <h4>Ostatnio dodane badania</h4>
             <ul class="jestem-list">
-	        	<ui:repeat var="data" value="#{requestBean.allRequests}">
+	        	<ui:repeat var="data" value="#{requestBunchBean.allRequests}">
 			        <li><h:link	outcome="zamowienie" includeViewParams="true" class="link1">
 	    							<f:param name="requestid" value="#{data.requestId}"/>
                 					#{data.title}			

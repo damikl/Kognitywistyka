@@ -29,33 +29,82 @@
 
 		<ui:include src="/templates/sections/sidebars/przedsiebiorca.xhtml" />
 
-			<div>
-				<table id="requests" cellspacing="0"> 
-					<thead> 
-						<tr>  
-		    				<th><p class="aktualnosci-header">Zamówienie na badanie</p></th>
-		    				<th><p class="aktualnosci-header">Firma</p></th>
-		    				<th><p class="aktualnosci-header">Data</p></th>
-		    				<th><p class="aktualnosci-header">Zobacz</p></th>
-						</tr> 
-					</thead>
-					
-					<tbody> 
-						<ui:repeat var="data" value="#{requestBean.allRequests}">
-							<tr>  
-			    				<td>#{data.title}</td> 
-			    				<td>#{data.company}</td>
-			    				<td>#{data.shortDate()}</td>
-			    				<td>
-									<h:link outcome="zamowienie" includeViewParams="true" class="link1">
-			    							<f:param name="requestid" value="#{data.requestId}"/>
-		                					Zobacz!
-		                			</h:link>
-								</td>
-							</tr>  
-						</ui:repeat>
-					</tbody> 
-				</table>
+			<div id="content2">
+				<h:dataTable id="requests" value="#{requestBunchBean.allRequests}" 
+		    	             binding="#{requestBunchBean.dataTable}"
+		    	             var="dataItem" class="publikacje-table">
+		    	             
+		        	<h:column>
+		    			<f:facet name="header">
+		    				<p>Tytuł</p> 
+			                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+			                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+		    			</f:facet>
+		    				<h:outputText value="#{dataItem.title}"/>
+		        	</h:column>
+		
+		        	<h:column>
+		        		<f:facet name="header">
+		        			<h:form>
+			        			<p>Firma</p>
+				                <h:commandLink action="#{requestBunchBean.sortByCompanyDesc()}">
+				                	<img src="resources/images/arrow_up.png" />
+				                </h:commandLink>
+				                <h:commandLink action="#{requestBunchBean.sortByCompanyAsc()}">
+				                	<img src="resources/images/arrow_down.png" />
+				                </h:commandLink>
+			                </h:form>
+		        		</f:facet>
+		        			<h:outputText value="#{dataItem.company}"/>
+		        	</h:column>
+		
+		        	<h:column>
+		        		<f:facet name="header">
+		        			<p>Data</p> 
+			                <a href="#"><img src="resources/images/arrow_up.png" /></a>
+			                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+		        		</f:facet>
+		    			
+		    			<h:outputText value="#{dataItem.shortDate()}">
+  							<f:convertDateTime pattern="yyyy-MM-dd " type="date" />
+						</h:outputText>
+		        	</h:column>
+		        	
+		        	<h:column>
+		        		<f:facet name="header">
+		        		</f:facet>
+		        		<h:form>
+			        		<h:link outcome="zamowienie" includeViewParams="true" class="link1">
+				    							<f:param name="requestid" value="#{dataItem.requestId}"/>
+			                					Zobacz!
+			                </h:link>
+		        		</h:form>
+		        	</h:column>
+		    	</h:dataTable>
+			 
+			    <div class="paginacja-box">
+			    	<div class="paginacja-prev">
+				    	<h:form><p>
+				    		<h:commandLink value="&lt;" action="#{requestBunchBean.pagePrevious}" class="link1"
+				                   rendered="#{requestBunchBean.currentPage != 1}" />
+				        </p></h:form>
+			        </div>
+			        
+			        <div class="paginacja-next">
+			        	<h:form><p>
+				    		<h:commandLink value="&gt;" action="#{requestBunchBean.pageNext}" class="link1"
+				                   rendered="#{requestBunchBean.totalPages != requestBunchBean.currentPage}" />
+				        </p></h:form>
+			        </div>
+			        
+			        <div class="paginacja-number">
+			        	<span><a href="#" class="link1">1</a></span>
+			        	<span class="paginacja-selected">2</span>
+			            <span><a href="#" class="link1">3</a></span>
+			            <span><a href="#" class="link1">4</a></span>
+			        </div>
+			    </div>
+				
 			</div>
 	</div>
 </ui:define>
