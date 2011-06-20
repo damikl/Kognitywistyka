@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		  xmlns:ui="http://java.sun.com/jsf/facelets"
-		  xmlns:h="http://java.sun.com/jsf/html">
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -31,7 +32,9 @@
         <article class="index-article">
         	<header>
             	<h4><a href="#" class="link1">#{news.title}</a></h4>
-                <time datetime="14-06-2010">#{news.date}</time>
+                <p><h:outputText value="#{news.date}">
+  					<f:convertDateTime pattern="d MMMM yyyy " type="date" />
+				</h:outputText></p>
             </header>
             <section>
             	<p>#{news.content}</p>

@@ -443,6 +443,14 @@ footer {
 	margin: 3px 0 3px;
 }
 
+.index-article header p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #8d8d8d;
+	display: block;
+	margin: 3px 0 3px;
+}
+
 
 .index-article section p {
 	font-family: Arial, Helvetica, sans-serif;
@@ -1242,4 +1250,15 @@ html ul.tabs li:last-child,html ul.tabs li:last-child a {
 	display: block;
 	width: 60%;
 	float: left;
+}
+
+/*----------LOGOWANIE------------------*/
+.logowanie-panel {
+	display: inline-box;
+	width: 350px;
+	margin: 100px auto;
+	cellspacing: 30px;
+	align: center;
+	font-size: 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
 }

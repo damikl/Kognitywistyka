@@ -15,23 +15,8 @@
 	<div id="head-wrapper">
         <h1><h:link value="Kognitywistyka FORESIGHT" outcome="index" /></h1>
         <div id="login-user-panel">
-            <p><h:link value="Zaloguj się" outcome="index_logged" class="button" /> lub Zaloguj się<a href="#" class="button">facebook</a></p>
+            <p><h:link value="Zaloguj się" outcome="logowanie" class="button" /> lub Zaloguj się<a href="#" class="button">facebook</a></p>
             <p class="link-right"><h:link value="Nie masz jeszcze u nas konta?" outcome="rejestracja" class="link2" /></p>
-         <h:form id="loginform" onsubmit="return validate()">
-                <table>
-                    <tr>
-                        <td>Username : </td>
-                        <td><h:inputText  id="uname" value="#{userBean.userName}"></h:inputText></td>
-                    </tr>
-                    <tr>
-                        <td>Password : </td>
-                        <td><h:inputSecret id="pwd" value="#{userBean.password}"></h:inputSecret></td>
-                    </tr>
-                </table>
-                <p/>
-                <h:commandButton id="mybutton" action="#{userBean.login}" value="Login" /><br />
-                <h:message for="mybutton" errorStyle="color: red"/>
-            </h:form>
         </div>
         <nav id="main-nav">
             <ul>
