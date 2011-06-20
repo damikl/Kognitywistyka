@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core">
+<head><title>IGNORED!</title></head>
+<body>
+<!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+
+<ui:composition template="/templates/masterLayout.xhtml">
+<!-- Tu podajemy wartość klasy body, tak by podświetlany był odpowiedni link w nawigacji -->
+<!-- Dostępne wartości: glowna, oprojekcie, aktualnosci, forum, analizy, kontakt, naukowiec, przedsiebiorca -->
+	<ui:param name="bodyClass" value="forum" />
+	
+<!-- Treść zawarta w poniższym elemencie <ui:define> zostanie "wklejona" jako content danej strony -->
+	<ui:define name="siteContent">
+
+<div id="site-wrapper">
+	<div id="content2">
+	<H3>Logowanie:</H3>
+	<h:form id="login-form" onsubmit="return validate()" class="contact-form">
+		<div>
+			<h:outputLabel value="Login:"/>
+			<h:inputText id="uname" value="#{userBean.userName}"></h:inputText>
+		</div>
+		<div>
+			<h:outputLabel value="Hasło:"/>
+			<h:inputSecret id="pwd" value="#{userBean.password}"></h:inputSecret>
+		</div>
+		<div>
+			<h:commandButton id="mybutton" action="#{userBean.login}" value="Zaloguj się" class="button contact-button"/><br />
+	    	<h:message for="mybutton" errorStyle="color: red"/>
+		</div>
+	</h:form>
+	</div>
+</div>
+<!--  KONIEC TREŚCI WŁASCIWEJ STRONY -->
+
+
+	</ui:define>
+</ui:composition>
+
+<!-- WSZYSTKO PONIŻEJ JEST IGNOROWANE -->
+<!-- Zostawiamy tylko dlatego by Eclipse nie sypał warningami -->
+</body>
+</html>
