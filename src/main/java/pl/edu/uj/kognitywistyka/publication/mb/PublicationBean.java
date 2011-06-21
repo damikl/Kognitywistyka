@@ -2,10 +2,12 @@ package pl.edu.uj.kognitywistyka.publication.mb;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 import pl.edu.uj.kognitywistyka.publication.bo.PublicationBo;
 import pl.edu.uj.kognitywistyka.publication.model.Publication;
@@ -29,5 +31,24 @@ public class PublicationBean implements Serializable {
 
 	public Publication getPublication(long id) {
 		return publicationBo.getPublication(id);
+	}
+	
+	public Publication getPublication() {
+	    FacesContext context = FacesContext.getCurrentInstance();
+        Map<String, String> paramMap = context.getExternalContext().getRequestParameterMap();
+        
+        int id;
+        
+        try {
+            id = Integer.parseInt(paramMap.get("id"));
+        } catch (NumberFormatException n) {
+            return null;
+        }
+        
+        if (id > 0 && id <= getAllPublication().size()) {
+            return getPublication(id);
+        } else {
+            return null;
+        }
 	}
 }

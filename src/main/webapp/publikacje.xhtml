@@ -39,9 +39,10 @@
 	                <a href="#"><img src="resources/images/arrow_down.png" /></a> -->
     			</f:facet>
     			<h:form><h4>
-    				<h:commandLink value="#{dataItem.title}"
+    			    <a href="publikacja.jsf?id=#{dataItem.publicationId}">#{dataItem.title}</a>
+    				<!-- <h:commandLink value="#{dataItem.title}"
     				               actionListener="#{publicationBean.editDataItem}"
-    				               action="publikacja" />
+    				               action="publikacja" /> -->
     			</h4></h:form>
         	</h:column>
         	<h:column>
