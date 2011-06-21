@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:k="http://kognitywistyka.uj.edu.pl">
 <head><title>IGNORED!</title></head>
 <body>
 <!-- WSZYSTKO POWYŻEJ JEST IGNOROWANE -->
@@ -28,15 +29,14 @@
      
     <div id="content2">
 
-    	<h:dataTable value="#{publicationBean.allPublication}" 
-    	             binding="#{publicationBean.dataTable}"
+        <h:form>
+    	<h:dataTable id="publications" value="#{publicationBean.allPublication}"
     	             var="dataItem" class="publikacje-table" rows="10">
-    	             
         	<h:column>
     			<f:facet name="header">
     				<p>Tytuł</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+	                <!-- <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a> -->
     			</f:facet>
     			<h:form><h4>
     				<h:commandLink value="#{dataItem.title}"
@@ -44,25 +44,22 @@
     				               action="publikacja" />
     			</h4></h:form>
         	</h:column>
-
         	<h:column>
         		<f:facet name="header">
         			<p>Autor</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+	                <!-- <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a> -->
         		</f:facet>
         		#{dataItem.authorFirstName} #{dataItem.authorLastName}
         	</h:column>
-
         	<h:column>
         		<f:facet name="header">
         			<p>Data</p> 
-	                <a href="#"><img src="resources/images/arrow_up.png" /></a>
-	                <a href="#"><img src="resources/images/arrow_down.png" /></a>
+	                <!-- <a href="#"><img src="resources/images/arrow_up.png" /></a>
+	                <a href="#"><img src="resources/images/arrow_down.png" /></a> -->
         		</f:facet>
     			#{dataItem.shortDate}
         	</h:column>
-        	
         	<h:column>
         		<f:facet name="header">
         		</f:facet>
@@ -70,29 +67,9 @@
         	</h:column>
     	</h:dataTable>
 	    
-	    <div class="paginacja-box">
-	    	<div class="paginacja-prev">
-		    	<h:form><p>
-		    		<h:commandLink value="&lt;" action="#{publicationBean.pagePrevious}" class="link1"
-		                   rendered="#{publicationBean.dataTable.first != 0}" />
-		        </p></h:form>
-	        </div>
-	        
-	        <div class="paginacja-next">
-	        	<h:form><p>
-		    		<h:commandLink value="&gt;" action="#{publicationBean.pageNext}" class="link1"
-		                   rendered="#{publicationBean.dataTable.first + publicationBean.dataTable.rows
-	                       &lt; publicationBean.dataTable.rowCount}" />
-		        </p></h:form>
-	        </div>
-	        <!-- <div class="paginacja-number">
-	        	<span class="paginacja-selected">1</span>
-	        	<span><a href="#" class="link1">2</a></span>
-	            <span><a href="#" class="link1">3</a></span>
-	            <span><a href="#" class="link1">4</a></span>
-	        </div> -->
-	    </div>
-    	
+	    <k:pager dataTableId="publications" showpages="4" />
+        </h:form>
+
     </div>
 </div>
 	
