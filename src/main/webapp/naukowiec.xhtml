@@ -78,23 +78,31 @@
 	<aside class="index-sidebar">
         <div class="index-sidebar-box">
             <h3>Korzystaj z możliwości serwisu</h3>
-            <a href="#" class="button button-right" >Załóż swój profil</a>
+            <a href="rejestracja.jsf" class="button button-right" >Załóż swój profil</a>
         </div>
         <div class="index-sidebar-box last-index-sidebar-box">
             <h4>Ostatnio zarejestrowani przedsiębiorcy</h4>
-            <ul class="jestem-list">
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-                <li><a href="#" class="link1">Jan Kowalski</a></li>
-            </ul>
+        	<ul class="jestem-list">
+	        	<ui:repeat var="businessman" value="#{fullBusinessmanNameBean.usersList}" class="jestem-list" >
+			        <li><h:link	outcome="profilnaukowca" 
+			        			includeViewParams="true" 
+			        			value="#{businessman.firstName} #{businessman.lastName}"
+			        			class="link1">
+			        	<f:param name="id" value="#{businessman.userId}"/>			
+			        </h:link></li>
+			    </ui:repeat>
+		    </ul>	
         </div>
         <div class="index-sidebar-box last-index-sidebar-box">
             <h4>Ostatnio dodane oferty</h4>
             <ul class="jestem-list">
-                <li><a href="#" class="link1">Tytuł oferty</a></li>
-                <li><a href="#" class="link1">Tytuł oferty</a></li>
-                <li><a href="#" class="link1">Tytuł oferty</a></li>
-            </ul>
+	        	<ui:repeat var="data" value="#{requestBunchBean.allRequests}">
+			        <li><h:link	outcome="zamowienie" includeViewParams="true" class="link1">
+	    							<f:param name="requestid" value="#{data.requestId}"/>
+                					#{data.title}			
+			        </h:link></li>
+			    </ui:repeat>
+		    </ul>	
         </div>
     </aside>
 </div>
