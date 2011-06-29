@@ -1072,6 +1072,22 @@ ul.pdf-list li {
 }
 
 /*----------------PAGINACJA----------------*/
+
+.paginacja {
+	font-size: 20px;
+}
+
+.paginacja a {
+    margin: 5px;
+    text-decoration: none;
+}
+
+.paginacja a.currentPage {
+    margin: 5px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .paginacja-box {
 	width: 300px;		/*TEGO NIE POWINNO BYĆ!!!! - DO NAPRAWY*/
 	margin:10px auto;

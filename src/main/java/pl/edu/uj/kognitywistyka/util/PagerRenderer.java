@@ -16,74 +16,62 @@ public class PagerRenderer extends Renderer {
             throws IOException {
         String id = component.getClientId(context);
         UIComponent parent = component;
-        while (!(parent instanceof UIForm))
-            parent = parent.getParent();
+        while (!(parent instanceof UIForm)) parent = parent.getParent();
         String formId = parent.getClientId(context);
 
-        ResponseWriter writer = context.getResponseWriter();
-        
-        String dataTableId = (String) component.getAttributes().get(
-                "dataTableId");
-        int showpages = toInt(component.getAttributes().get("showpages"));
+        ResponseWriter writer = context.getResponseWriter();    
+
+        String styleClass = (String) component.getAttributes().get("styleClass");
+        String selectedStyleClass 
+           = (String) component.getAttributes().get("selectedStyleClass");
+        String dataTableId = (String) component.getAttributes().get("dataTableId");
+        int showpages = toInt(component.getAttributes().get("showpages"));      
+
+        // find the component with the given ID
 
         UIData data = (UIData) component.findComponent(dataTableId);
-        
+
         int first = data.getFirst();
         int itemcount = data.getRowCount();
-        int pagesize = data.getRows();
-        if (pagesize <= 0)
-            pagesize = itemcount;
+        int pagesize = data.getRows(); 
+        if (pagesize <= 0) pagesize = itemcount;
+
         int pages = itemcount / pagesize;
-        if (itemcount % pagesize != 0)
-            pages++;
+        if (itemcount % pagesize != 0) pages++;
+
         int currentPage = first / pagesize;
-        if (first >= itemcount - pagesize)
-            currentPage = pages - 1;
+        if (first >= itemcount - pagesize) currentPage = pages - 1;
         int startPage = 0;
         int endPage = pages;
-        if (showpages > 0) {
-            startPage = (currentPage / showpages) * showpages;
-            endPage = Math.min(startPage + showpages, pages);
+        if (showpages > 0) { 
+           startPage = (currentPage / showpages) * showpages;
+           endPage = Math.min(startPage + showpages, pages);
         }
         
-        // div.paginacja-box
         writer.startElement("div", component);
-        writer.writeAttribute("class", "paginacja-box", null);
-
-        // div.paginacja-prev
-        writer.startElement("div", component);
-        writer.writeAttribute("class", "paginacja-prev", null);
-        writer.startElement("p", component);
+        writer.writeAttribute("class", "paginacja", null);
+ 
         if (currentPage > 0)
-            writeLink(writer, component, formId, id, "<", "link1");
-        writer.endElement("p");
-        writer.endElement("div");
+           writeLink(writer, component, formId, id, "<", styleClass);
         
-        // div.paginacja-next
-        writer.startElement("div", component);
-        writer.writeAttribute("class", "paginacja-next", null);
-        writer.startElement("p", component);
-        if (first < itemcount - pagesize)
-            writeLink(writer, component, formId, id, ">", "link1");
-        writer.endElement("p");
-        writer.endElement("div");
-        
-        // div.paginacja-number
-        writer.startElement("div", component);
-        writer.writeAttribute("class", "paginacja-number", null);
-        
+        if (startPage > 0)  
+           writeLink(writer, component, formId, id, "<<", styleClass);
+
         for (int i = startPage; i < endPage; i++) {
-            writer.startElement("span", component);
-            if (i == currentPage)
-                writer.writeAttribute("class", "paginacja-selected", null);
-            //writer.writeText("" + (i + 1), null);
-            writeLink(writer, component, formId, id, "" + (i + 1), "link1");
-            writer.endElement("span");
+           writeLink(writer, component, formId, id, "" + (i + 1), 
+              i == currentPage ? selectedStyleClass : styleClass);
         }
+
+        if (endPage < pages) 
+           writeLink(writer, component, formId, id, ">>", styleClass);
+
+        if (first < itemcount - pagesize)
+           writeLink(writer, component, formId, id, ">", styleClass);
+
+        // hidden field to hold result
+        writeHiddenField(writer, component, id);
         
         writer.endElement("div");
-        writer.endElement("div");
-        writeHiddenField(writer, component, id);
     }
 
     private void writeLink(ResponseWriter writer, UIComponent component,
@@ -130,6 +118,8 @@ public class PagerRenderer extends Renderer {
         int first = data.getFirst();
         int itemcount = data.getRowCount();
         int pagesize = data.getRows();
+        int showpages = toInt(component.getAttributes().get("showpages"));
+        
         if (pagesize <= 0)
             pagesize = itemcount;
 
@@ -137,6 +127,10 @@ public class PagerRenderer extends Renderer {
             first -= pagesize;
         else if (response.equals(">"))
             first += pagesize;
+        else if (response.equals("<<"))
+            first -= showpages * pagesize;
+        else if (response.equals(">>"))
+            first += showpages * pagesize;
         else {
             int page = Integer.parseInt(response);
             first = (page - 1) * pagesize;
