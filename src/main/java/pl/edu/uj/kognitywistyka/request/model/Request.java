@@ -1,9 +1,14 @@
 package pl.edu.uj.kognitywistyka.request.model;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Request{
+public class Request implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3141024893953496387L;
 	private long requestId;
 	private String title;
 	private Date date;

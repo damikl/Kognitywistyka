@@ -80,15 +80,20 @@ public class RegistrationBean {
 				}
 			}
 			user.setTrades(tradesList);
+			
+			// Initialization
+			user.setBusinessman(false);
+			user.setScientist(false);
 			if(profession != null)
 			{
-				user.setBusinessman(profession.equals("businessman"));
-				user.setScientist(profession.equals("scientist"));
-			}
-			else
-			{
-				user.setBusinessman(false);
-				user.setScientist(false);
+				for(String prof : profession)
+				{
+					// setting proper value
+					if(prof.equals("businessman"))
+						user.setBusinessman(true);
+					if(prof.equals("scientist"))
+						user.setScientist(true);
+				}	
 			}
 			
 			user.setCity(city);
