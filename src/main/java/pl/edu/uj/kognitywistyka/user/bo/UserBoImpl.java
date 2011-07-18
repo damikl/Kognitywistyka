@@ -37,4 +37,8 @@ public class UserBoImpl implements UserBo, Serializable{
 	public User createUser(User user){
 		return userDao.createUser(user);
 	}
+	
+	public User getUser(long userId) {
+		return userDao.getUserById(userId);
+	}
 }

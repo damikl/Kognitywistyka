@@ -31,8 +31,8 @@ public class RequestDaoImpl extends HibernateDaoSupport
 		return getHibernateTemplate().find("from Request order by date desc");
 	}
 	
-	public Request getRequest(long id) {
-		return (Request) getHibernateTemplate().get(Request.class, id);
+	public Request getRequest(long Id) {
+		return (Request) getHibernateTemplate().get(Request.class, Id);
 	}
 
 

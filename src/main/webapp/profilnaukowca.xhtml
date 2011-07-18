@@ -16,7 +16,7 @@
 	<ui:define name="siteContent">
 	
 <div id="site-wrapper">
-	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; <a href="#" class="link1">Jestem przedsiębiorcą</a> &gt; <a href="#" class="link1">Naukowcy</a> &gt; Jan Kowalski</p><br />
+	<p id="site-navigation"><a href="#" class="link1">Strona główna</a> &gt; <a href="przedsiebiorca.jsf" class="link1">Jestem przedsiębiorcą</a> &gt; <a href="tabela-naukowcy.jsf" class="link1">Naukowcy</a> &gt; Jan Kowalski</p><br />
     <aside class="sidebar2">
     	<ul class="submenu1">
         	<li class="submenu-checked"><a href="#">Kadra projektu</a></li>
@@ -30,17 +30,14 @@
     	<article class="profil-naukowca">
 	    		<section>
 	    		
-	    		<header><h1>Jan Kowalski</h1></header>
-		    	<p>Prof. hab. Uniwersytet Jagielloński (woj. Małopolskie)</p>
+	    		<header><h1>#{showUserBean.firstName} #{showUserBean.lastName}</h1></header>
+		    	<p>#{showUserBean.positionInCompany} #{showUserBean.companyName} (woj. #{showUserBean.region})</p>
 		    	
 		    	<header><h2>Kontakt</h2></header>
-		    	<p><a href="#" class="link1">jan.kowalski@gmail.com</a></p>
+		    	<p><a href="#" class="link1">#{showUserBean.email}</a></p>
 		    	
 		    	<header><h2>O sobie</h2></header>
-		    	<p class="withlh">neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaera</p>
-		    	
-		    	<header><h2>Branża</h2></header>
-		    	<p><a href="#" class="link1">Reklama</a></p>
+		    	<p class="withlh">#{showUserBean.companyDescription}</p>
 		    	
 		    	</section>
 	    </article>

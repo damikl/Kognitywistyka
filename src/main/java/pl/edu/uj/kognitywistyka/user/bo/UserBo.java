@@ -6,4 +6,5 @@ public interface UserBo {
     User userAuthentication(String user, String password);
 	boolean checkUserExistanceByUserName(String userName);
 	User createUser(User user);
+	User getUser(long userId);
 }
