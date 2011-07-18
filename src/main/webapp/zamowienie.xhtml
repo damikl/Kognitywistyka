@@ -33,8 +33,8 @@
     		<h:form>
 	    		<section>
 	    		
-	    		<header><h1>Jan Kowalski</h1></header>
-		    	<p>Dyrektor - JK Company (Kraków, małopolskie)</p>
+	    		<header><h1>#{requestBean.person}</h1></header>
+		    	<p>#{requestBean.company}</p>
 		    	
 		    	</section>
 		    </h:form>
@@ -43,12 +43,10 @@
 	    
 	    <article class="profil-naukowca">
 	    	<section>
-	    	<header><h1>Nazwa zamówienia na badanie</h1></header>
-		    	<p class="data">14 czerwca 2010</p>
-	    		<a href="#" class="link1 link-tag">Tag#1,</a>
-	    		<a href="#" class="link1 link-tag">Tag#2,</a>
-	    		<a href="#" class="link1 link-tag">Tag#3</a>
-	    		<p>neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaera</p>
+	    	<header><h1>#{requestBean.title}</h1></header>
+		    	<p class="data">#{requestBean.date}</p>
+	    		<a href="#" class="link1 link-tag">#{requestBean.tags}</a>
+	    		<p>#{requestBean.content}</p>
 	    	</section>
 	    </article>
     	

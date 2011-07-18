@@ -40,6 +40,8 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao, Seriali
 		
 	}
 	
-	
+	public User getUserById(long userId) {
+		return (User) getHibernateTemplate().get(User.class, userId);
+	}
 	
 }

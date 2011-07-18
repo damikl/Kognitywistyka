@@ -17,6 +17,7 @@ import pl.edu.uj.kognitywistyka.publication.model.Publication;
 public class PublicationBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private List<Publication> allPublication;
 
 	@ManagedProperty(name = "publicationBo", value = "#{publicationBo}")
 	private PublicationBo publicationBo;
@@ -26,7 +27,8 @@ public class PublicationBean implements Serializable {
 	}
 
 	public List<Publication> getAllPublication() {
-		return publicationBo.findAllPublication();
+		allPublication = publicationBo.findAllPublication();
+		return allPublication;
 	}
 
 	public Publication getPublication(long id) {

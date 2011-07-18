@@ -18,13 +18,14 @@ import pl.edu.uj.kognitywistyka.request.model.Request;
 public class RequestBean implements Serializable {
 
 	private static final long serialVersionUID = 20110608L;
-	private long requestId;
+	private long requestId = 1;
 	private String title;
 	private Date date;
 	private String company;
-	private String person;
+	private String person = "Boski";
 	private String tags;
 	private String content;
+	Request request;
 	
 	// Dependency injection
 	@ManagedProperty(name="requestBo", value="#{requestBo}")
@@ -33,14 +34,17 @@ public class RequestBean implements Serializable {
 	@PostConstruct
 	@SuppressWarnings("unused")
 	private void init() {
+		System.out.println("prePreinit");
 		Map<String, String> requestMap = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		String requestId = requestMap.get("requestid");
-		if(requestId != null)
-			preinitializeBean(new Long(requestId));
+		Long longId = new Long(requestId);
+		if(requestId != null){
+			preinitializeBean(longId.longValue());
+			System.out.println("Preinit");}
 	}
 	
 	private void preinitializeBean(long requestId) {
-		Request request = requestBo.getRequest(requestId);
+		request = requestBo.getRequest(requestId);
 		if(request != null) {
 			this.requestId = request.getRequestId();
 			this.title = request.getTitle();

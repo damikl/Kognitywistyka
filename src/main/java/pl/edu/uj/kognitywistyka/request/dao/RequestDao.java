@@ -9,5 +9,5 @@ public interface RequestDao {
 	void removeRequest(Request request);
 	void updateRequest(Request request);
 	List<Request> findAllRequests();
-	Request getRequest(long id);
+	Request getRequest(long Id);
 }
