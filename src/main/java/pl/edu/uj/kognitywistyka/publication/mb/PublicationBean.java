@@ -27,7 +27,8 @@ public class PublicationBean implements Serializable {
 	}
 
 	public List<Publication> getAllPublication() {
-		allPublication = publicationBo.findAllPublication();
+		if(allPublication == null)
+			allPublication = publicationBo.findAllPublication();
 		return allPublication;
 	}
 
